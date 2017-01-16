@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4456.robot;
+package org.usfirst.frc.team4456;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 
