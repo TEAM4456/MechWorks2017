@@ -14,7 +14,7 @@ public class Robot extends IterativeRobot {
 	
 	public void robotInit() {
 		
-		// RobotMap.init();
+		RobotMap.init();
 		
 		// construct subsystems here
 		drive = new Drive();
