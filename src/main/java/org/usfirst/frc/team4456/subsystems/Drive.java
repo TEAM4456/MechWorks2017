@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import com.ctre.CANTalon;
 
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drive extends Subsystem {
@@ -24,7 +23,8 @@ public class Drive extends Subsystem {
 	
 	public void drive(Joystick joystick) {
 		
-		// robotDrive.setSafetyEnabled(false);
+		//robotDrive.setSafetyEnabled(false);
+		//robotDrive.arcadeDrive(stick);
 		
 	}
 	
