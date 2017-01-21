@@ -24,7 +24,7 @@ public class Drive extends Subsystem {
 	public void drive(Joystick joystick) {
 		
 		//robotDrive.setSafetyEnabled(false);
-		//robotDrive.tankDrive(stick);
+		//robotDrive.tankDrive(**left y axis**, **right y axis**);
 		
 	}
 	
