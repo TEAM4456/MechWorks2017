@@ -14,10 +14,4 @@ public class RobotMap {
 	CANTalon deflectorTalon;
 	CANTalon intakeTalon;
 	
-	public RobotMap() {
-		
-		
-		
-	}
-	
 }
