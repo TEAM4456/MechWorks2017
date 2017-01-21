@@ -45,3 +45,6 @@ public class Robot extends IterativeRobot {
 	public void testPeriodic() { /* last year had LiveWindow.run() here */ }
 	
 }
+
+// "deplooy" -Andrew Rose, 2017, trying to type "deploy"
+// pronounced "de-ploo-ee"
