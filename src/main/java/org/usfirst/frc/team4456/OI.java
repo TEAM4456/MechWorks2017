@@ -22,7 +22,7 @@ public class OI {
 	
 	// AXIS CONTROLS NOT YET IMPLEMENTED
 	
-	private Joystick joystick;
+	public Joystick joystick;
 	
 	private Robot robot; // implemented last year, not used in OI (at least as far as I can tell)
 	

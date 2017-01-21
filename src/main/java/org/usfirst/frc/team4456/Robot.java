@@ -24,8 +24,10 @@ public class Robot extends IterativeRobot {
 		// autonomous choosing stuff here
 		
 	}
-	public void robotPeriodic() { Scheduler.getInstance().run(); } // this call was made in each mode's Periodic() last
-																   // year, and robotPeriodic() was not implemented
+	public void robotPeriodic() {
+		Scheduler.getInstance().run();
+		drive.drive(oi.joystick);
+	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
 	
 	public void disabledInit() {}
 	public void disabledPeriodic() {}
