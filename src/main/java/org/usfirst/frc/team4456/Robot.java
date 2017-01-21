@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4456;
 
+import org.usfirst.frc.team4456.subsystems.*;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
@@ -8,12 +10,14 @@ public class Robot extends IterativeRobot {
 	OI oi;
 	
 	// Subsystem declarations here
+	static Drive drive;
 	
 	public void robotInit() {
 		
 		// RobotMap.init();
 		
 		// construct subsystems here
+		drive = new Drive();
 		
 		oi = new OI(this);
 		
