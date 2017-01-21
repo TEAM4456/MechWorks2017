@@ -1,17 +1,23 @@
 package org.usfirst.frc.team4456;
 
-// imports here
+import com.ctre.CANTalon;
 
 public class RobotMap {
 	
-	// leftDriveTalon1
-	// leftDriveTalon2 <-- slave to leftDriveTalon1
-	// rightDriveTalon1
-	// rightDriveTalon2 <-- slave to rightDriveTalon1
-	// loaderTalon
-	// shooterTalon
-	// winchTalon
-	// deflectorTalon
-	// intakeTalon
+	CANTalon leftDriveTalon1;
+	CANTalon leftDriveTalon2; // <-- slave to leftDriveTalon1
+	CANTalon rightDriveTalon1;
+	CANTalon rightDriveTalon2; // <-- slave to rightDriveTalon2
+	CANTalon loaderTalon;
+	CANTalon shooterTalon;
+	CANTalon winchTalon;
+	CANTalon deflectorTalon;
+	CANTalon intakeTalon;
+	
+	public RobotMap() {
+		
+		
+		
+	}
 	
 }
