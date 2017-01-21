@@ -26,7 +26,7 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		drive.drive(oi.joystick);
+		drive.drive(oi.joystick); // TEMPORARY
 	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
 	
 	public void disabledInit() {}
