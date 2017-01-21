@@ -12,14 +12,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drive extends Subsystem {
 	
-	//public final CANTalon leftDrive = RobotMap.leftDrive;
-	//public final CANTalon rightDrive = RobotMap.rightDrive;
+	//public final CANTalon leftDriveTalon = RobotMap.leftDriveTalon;
+	//public final CANTalon rightDriveTalon = RobotMap.rightDriveTalon;
 	//public final RobotDrive robotDrive = RobotMap.robotDrive;
 	
 	// TEMPORARY
-	public final CANTalon leftDrive = new CANTalon(3);
-	public final CANTalon rightDrive = new CANTalon(4);
-	public final RobotDrive robotDrive = new RobotDrive(leftDrive, rightDrive);
+	public final CANTalon leftDriveTalon = new CANTalon(3);
+	public final CANTalon rightDriveTalon = new CANTalon(4);
+	public final RobotDrive robotDrive = new RobotDrive(leftDriveTalon, rightDriveTalon);
 	// /TEMPORARY
 	
 	protected void initDefaultCommand() {
