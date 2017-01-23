@@ -10,14 +10,25 @@ public class Robot extends IterativeRobot {
 	OI oi;
 	
 	// Subsystem declarations here
+	static Deflector deflector;
 	static Drive drive;
+	static Intake intake;
+	static Loader loader;
+	static Shooter shooter;
+	static Winch winch;
+	
 	
 	public void robotInit() {
 		
 		RobotMap.init();
 		
 		// construct subsystems here
+		deflector = new Deflector();
 		drive = new Drive();
+		intake = new Intake();
+		loader = new Loader();
+		shooter = new Shooter();
+		winch = new Winch();
 		
 		oi = new OI(this);
 		
