@@ -20,15 +20,13 @@ public class OI {
 	private JoystickButton leftStick; // 9
 	private JoystickButton rightStick; // 10
 	
-	// AXIS CONTROLS NOT YET IMPLEMENTED
-	
 	public Joystick joystick;
 	
 	private Robot robot; // implemented last year, not used in OI (at least as far as I can tell)
 	
-	public OI(Robot robot) { // implemented last year, not used in OI (at least as far as I can tell)
+	public OI(Robot robot) {
 		
-		this.robot = robot; // implemented last year, not used in OI (at least as far as I can tell)
+		this.robot = robot;
 		
 		joystick = new Joystick(0);
 		
@@ -61,10 +59,6 @@ public class OI {
 		//leftStick command configuration here
 		rightStick = new JoystickButton(joystick, 10);
 		//rightStick command configuration here
-		
-		// AXIS CONTROLS NOT YET IMPLEMENTED
-		
-		// SmartDashboard buttons not yet implemented, maybe never implemented
 		
 	}
 	
