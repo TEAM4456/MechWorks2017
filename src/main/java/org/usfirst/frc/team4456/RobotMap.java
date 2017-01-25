@@ -14,7 +14,7 @@ public class RobotMap {
 	public static CANTalon winchTalon;
 	public static CANTalon deflectorTalon;
 	public static CANTalon intakeTalon;
-
+	
 	public static void init() {
 		
 		leftDriveTalon1 = new CANTalon(3);
