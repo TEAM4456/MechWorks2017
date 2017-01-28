@@ -5,6 +5,9 @@ import org.usfirst.frc.team4456.subsystems.*;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.CameraServer;
+
 public class Robot extends IterativeRobot {
 	
 	OI oi;
@@ -19,6 +22,8 @@ public class Robot extends IterativeRobot {
 	
 	
 	public void robotInit() {
+		
+		CameraServer.getInstance().startAutomaticCapture();
 		
 		RobotMap.init();
 		
@@ -38,6 +43,10 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
 		drive.drive(oi.joystick); // TEMPORARY
+		
+		SmartDashboard.putNumber("Joystick X", oi.joystick.getRawAxis(0));
+		SmartDashboard.putNumber("Joystick Y", oi.joystick.getRawAxis(1));
+		
 	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
 	
 	public void disabledInit() {}
