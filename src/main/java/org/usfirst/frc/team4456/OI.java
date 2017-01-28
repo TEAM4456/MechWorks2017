@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4456;
 
 //import org.usfirst.frc.team4456.Robot;
-//import org.usfirst.frc.team4456.commands.*;
+import org.usfirst.frc.team4456.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -42,7 +42,7 @@ public class OI {
 		 */
 		
 		JoystickButton aButton = new JoystickButton(joystick, 1);
-		//aButton command configuration here
+		aButton.toggleWhenPressed(new toggleIntake());
 		JoystickButton bButton = new JoystickButton(joystick, 2);
 		//bButton command configuration here
 		JoystickButton xButton = new JoystickButton(joystick, 3);
