@@ -3,7 +3,7 @@ package org.usfirst.frc.team4456;
 import com.ctre.CANTalon;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class RobotMap {
+public class RobotMap_old {
 	
 	public static CANTalon leftDriveTalon1;
 	public static CANTalon leftDriveTalon2; // <-- slave to leftDriveTalon1
@@ -31,7 +31,7 @@ public class RobotMap {
 		//rightDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
 		//rightDriveTalon2.set(rightDriveTalon1.getDeviceID());
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
-		//rightDriveTalon2.reverseOutput(true);
+        //rightDriveTalon2.reverseOutput(true);
 		
 		//SmartDashboard.putData("rightDrive", rightDriveTalon1);
 		
