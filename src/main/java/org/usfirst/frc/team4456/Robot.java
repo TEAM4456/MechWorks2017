@@ -5,7 +5,6 @@ import org.usfirst.frc.team4456.subsystems.*;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
@@ -25,7 +24,7 @@ public class Robot extends IterativeRobot {
 		
 		CameraServer.getInstance().startAutomaticCapture();
 		
-		RobotMap.init();
+		RobotMap_old.init();
 		
 		// construct subsystems here
 		deflector = new Deflector();

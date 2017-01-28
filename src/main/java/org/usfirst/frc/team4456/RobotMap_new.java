@@ -3,7 +3,7 @@ package org.usfirst.frc.team4456;
 import com.ctre.CANTalon;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class RobotMap {
+public class RobotMap_new {
 	
 	public static CANTalon leftDriveTalon1;
 	public static CANTalon leftDriveTalon2; // <-- slave to leftDriveTalon1
@@ -73,3 +73,4 @@ public class RobotMap {
 	}
 	
 }
+
