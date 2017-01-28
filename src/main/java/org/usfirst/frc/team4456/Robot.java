@@ -42,6 +42,7 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
 		drive.betterArcadeDrive(oi.joystick);
+		// add more calls for axis-controlled systems here
 	}
 	
 	public void disabledInit() {}
