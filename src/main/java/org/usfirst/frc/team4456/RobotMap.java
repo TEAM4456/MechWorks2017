@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4456;
 
 import com.ctre.CANTalon;
-//import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RobotMap {
 	
@@ -24,7 +24,7 @@ public class RobotMap {
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
 		//leftDriveTalon2.reverseOutput(true);
 		
-		//LiveWindow.addActuator("Drive", "leftDrive", leftDriveTalon1);
+		//SmartDashboard.putData("leftDrive", leftDriveTalon1);
 		
 		rightDriveTalon1 = new CANTalon(4);
 		//rightDriveTalon2 = new CANTalon(6);
@@ -33,42 +33,42 @@ public class RobotMap {
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
         //rightDriveTalon2.reverseOutput(true);
 		
-		//LiveWindow.addActuator("Drive", "rightDrive", rightDriveTalon1);
+		//SmartDashboard.putData("rightDrive", rightDriveTalon1);
 		
 		//loaderTalon = new CANTalon(1337); // PLACEHOLDER
 		//loaderTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//loaderTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//loaderTalon.setPosition(0);
 		
-		//LiveWindow.addActuator("Loader", "loader", loaderTalon);
+		//SmartDashboard.putData("loaderTalon", loaderTalon);
 		
 		//shooterTalon = new CANTalon(1337); // PLACEHOLDER
 		//shooterTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//shooterTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//shooterTalon.setPosition(0);
 		
-		//LiveWindow.addActuator("Shooter", "shooter", shooterTalon);
+		//SmartDashboard.putData("shooterTalon", shooterTalon);
 		
 		//winchTalon = new CANTalon(1337); // PLACEHOLDER
 		//winchTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//winchTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//winchTalon.setPosition(0);
 		
-		//LiveWindow.addActuator("Winch", "winch", winchTalon);
+		//SmartDashboard.putData("winchTalon", winchTalon);
 		
 		//deflectorTalon = new CANTalon(1337); // PLACEHOLDER
 		//deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//deflectorTalon.setPosition(0);
 		
-		//LiveWindow.addActuator("Deflector", "deflector", deflectorTalon);
+		//SmartDashboard.putData("deflectorTalon", deflectorTalon);
 		
 		//intakeTalon = new CANTalon(1337); // PLACEHOLDER
 		//intakeTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//intakeTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//intakeTalon.setPosition(0);
 		
-		//LiveWindow.addActuator("Intake", "intake", intakeTalon);
+		//SmartDashboard.putData("intakeTalon", intakeTalon);
 		
 	}
 	
