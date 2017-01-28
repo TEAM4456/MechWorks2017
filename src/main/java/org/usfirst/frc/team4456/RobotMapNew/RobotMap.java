@@ -1,9 +1,9 @@
-package org.usfirst.frc.team4456;
+package org.usfirst.frc.team4456.RobotMapNew;
 
 import com.ctre.CANTalon;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class RobotMap_new {
+public class RobotMap {
 	
 	public static CANTalon leftDriveTalon1;
 	public static CANTalon leftDriveTalon2; // <-- slave to leftDriveTalon1
