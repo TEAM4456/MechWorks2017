@@ -3,7 +3,7 @@ package org.usfirst.frc.team4456.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4456.subsystems.Intake;
-import org.usfirst.frc.team4456.RobotMapOld.RobotMap;
+import org.usfirst.frc.team4456.RobotMap;
 
 public class toggleIntake extends Command {
 	
