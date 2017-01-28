@@ -7,7 +7,6 @@ import org.usfirst.frc.team4456.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import com.ctre.CANTalon;
 
 public class Intake extends Subsystem {
 	

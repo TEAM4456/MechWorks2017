@@ -3,42 +3,39 @@ package org.usfirst.frc.team4456.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4456.subsystems.Intake;
-import org.usfirst.frc.team4456.RobotMap;
 
 public class toggleIntake extends Command {
 	
-	public toggleIntake() {
-		
-	}
+	boolean running;
 	
 	protected void initialize() {
-		
-	}
-	
-	protected void execute() {
-		
-		if (RobotMap.intakeTalon.get() < 0.00001) {
-			
-			Intake.startIntake();
-			
-		} else {
-			
-			Intake.stopIntake();
-			
-		}
-		
+		running = false;
 	}
 	
 	protected boolean isFinished() {
 		return isTimedOut();
 	}
 	
+	public synchronized void start() {
+		running = true;
+		Intake.startIntake();
+	}
+	
+	public synchronized void cancel() {
+		end();
+	}
+	
 	protected void end() {
-		
+		Intake.stopIntake();
+		running = false;
 	}
 	
 	protected void interrupted() {
 		end();
+	}
+	
+	public synchronized boolean isRunning() {
+		return running;
 	}
 	
 }
