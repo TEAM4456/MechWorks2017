@@ -63,7 +63,7 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("deflectorTalon", deflectorTalon);
 		
-		//intakeTalon = new CANTalon(1337); // PLACEHOLDER
+		intakeTalon = new CANTalon(9); // PLACEHOLDER
 		//intakeTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//intakeTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//intakeTalon.setPosition(0);
