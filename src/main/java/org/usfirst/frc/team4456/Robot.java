@@ -41,8 +41,8 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		drive.betterArcadeDrive(oi.joystick); // TEMPORARY
-	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
+		drive.betterArcadeDrive(oi.joystick);
+	}
 	
 	public void disabledInit() {}
 	public void disabledPeriodic() {}
