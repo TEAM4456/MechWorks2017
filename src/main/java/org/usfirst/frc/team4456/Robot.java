@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
-import org.usfirst.frc.team4456.RobotMapNew.RobotMap;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
