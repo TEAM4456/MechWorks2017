@@ -2,6 +2,9 @@ package org.usfirst.frc.team4456.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+import org.usfirst.frc.team4456.subsystems.Intake;
+import org.usfirst.frc.team4456.RobotMapOld.RobotMap;
+
 public class toggleIntake extends Command {
 	
 	public toggleIntake() {
@@ -13,6 +16,16 @@ public class toggleIntake extends Command {
 	}
 	
 	protected void execute() {
+		
+		if (RobotMap.intakeTalon.get() < 0.00001) {
+			
+			Intake.startIntake();
+			
+		} else {
+			
+			Intake.stopIntake();
+			
+		}
 		
 	}
 	
@@ -27,4 +40,5 @@ public class toggleIntake extends Command {
 	protected void interrupted() {
 		end();
 	}
+	
 }
