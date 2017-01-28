@@ -9,6 +9,7 @@ public class OI {
 	
 	// last year all fields were public, maybe change to public if necessary
 	
+	/* UNCOMMENT IF LOCAL VARIABLES DO NOT WORK
 	private JoystickButton aButton; // 1
 	private JoystickButton bButton; // 2
 	private JoystickButton xButton; // 3
@@ -19,6 +20,7 @@ public class OI {
 	private JoystickButton startButton; // 8
 	private JoystickButton leftStick; // 9
 	private JoystickButton rightStick; // 10
+	*/
 	
 	public Joystick joystick;
 	
@@ -39,25 +41,25 @@ public class OI {
 							etc...
 		 */
 		
-		aButton = new JoystickButton(joystick, 1);
+		JoystickButton aButton = new JoystickButton(joystick, 1);
 		//aButton command configuration here
-		bButton = new JoystickButton(joystick, 2);
+		JoystickButton bButton = new JoystickButton(joystick, 2);
 		//bButton command configuration here
-		xButton = new JoystickButton(joystick, 3);
+		JoystickButton xButton = new JoystickButton(joystick, 3);
 		//xButton command configuration here
-		yButton = new JoystickButton(joystick, 4);
+		JoystickButton yButton = new JoystickButton(joystick, 4);
 		//yButton command configuration here
-		leftBumper = new JoystickButton(joystick, 5);
+		JoystickButton leftBumper = new JoystickButton(joystick, 5);
 		//leftBumper command configuration here
-		rightBumper = new JoystickButton(joystick, 6);
+		JoystickButton rightBumper = new JoystickButton(joystick, 6);
 		//rightBumper command configuration here
-		backButton = new JoystickButton(joystick, 7);
+		JoystickButton backButton = new JoystickButton(joystick, 7);
 		//selectButton command configuration here
-		startButton = new JoystickButton(joystick, 8);
+		JoystickButton startButton = new JoystickButton(joystick, 8);
 		//startButton command configuration here
-		leftStick = new JoystickButton(joystick, 9);
+		JoystickButton leftStick = new JoystickButton(joystick, 9);
 		//leftStick command configuration here
-		rightStick = new JoystickButton(joystick, 10);
+		JoystickButton rightStick = new JoystickButton(joystick, 10);
 		//rightStick command configuration here
 		
 	}
