@@ -43,10 +43,6 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
 		drive.drive(oi.joystick); // TEMPORARY
-		
-		SmartDashboard.putNumber("Joystick X", oi.joystick.getRawAxis(0));
-		SmartDashboard.putNumber("Joystick Y", oi.joystick.getRawAxis(1));
-		
 	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
 	
 	public void disabledInit() {}
