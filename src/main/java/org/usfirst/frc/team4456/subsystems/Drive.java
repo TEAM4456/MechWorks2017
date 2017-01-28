@@ -26,23 +26,11 @@ public class Drive extends Subsystem {
 		// set default command here, last year was teleop command
 	}
 	
-	public void drive(Joystick joystick) {
-		
-		//robotDrive.setSafetyEnabled(false);
-		//robotDrive.tankDrive(joystick.getRawAxis(1), joystick.getRawAxis(5));
-		//robotDrive.arcadeDrive(joystick);
-		betterArcadeDrive(joystick);
-		
-	}
-	
 	public void betterArcadeDrive(Joystick joystick) {
-		
-		// Maybe redo later with PID?
 		
 		double xValue = joystick.getRawAxis(0);
 		double yValue = joystick.getRawAxis(1);
 		
-		//robotDrive.setSafetyEnabled(false);
 		robotDrive.tankDrive(yValue - xValue, yValue + xValue);
 		
 	}

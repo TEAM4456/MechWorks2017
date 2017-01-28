@@ -24,11 +24,7 @@ public class OI {
 	
 	public Joystick joystick;
 	
-	private Robot robot; // implemented last year, not used in OI (at least as far as I can tell)
-	
-	public OI(Robot robot) {
-		
-		this.robot = robot;
+	public OI() {
 		
 		joystick = new Joystick(0);
 		

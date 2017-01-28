@@ -34,14 +34,14 @@ public class Robot extends IterativeRobot {
 		shooter = new Shooter();
 		winch = new Winch();
 		
-		oi = new OI(this);
+		oi = new OI();
 		
 		// autonomous choosing stuff here
 		
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		drive.drive(oi.joystick); // TEMPORARY
+		drive.betterArcadeDrive(oi.joystick); // TEMPORARY
 	} // the getInstance().run() call was made in each mode's Periodic() last year, and robotPeriodic() was not implemented
 	
 	public void disabledInit() {}
