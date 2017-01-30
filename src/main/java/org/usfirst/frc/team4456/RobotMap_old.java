@@ -31,7 +31,7 @@ public class RobotMap_old {
 		//rightDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
 		//rightDriveTalon2.set(rightDriveTalon1.getDeviceID());
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
-        //rightDriveTalon2.reverseOutput(true);
+		//rightDriveTalon2.reverseOutput(true);
 		
 		//SmartDashboard.putData("rightDrive", rightDriveTalon1);
 		
@@ -49,7 +49,7 @@ public class RobotMap_old {
 		
 		//SmartDashboard.putData("shooterTalon", shooterTalon);
 		
-		//winchTalon = new CANTalon(1337); // PLACEHOLDER
+		winchTalon = new CANTalon(1337); // PLACEHOLDER
 		//winchTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//winchTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//winchTalon.setPosition(0);
@@ -63,7 +63,7 @@ public class RobotMap_old {
 		
 		//SmartDashboard.putData("deflectorTalon", deflectorTalon);
 		
-		//intakeTalon = new CANTalon(1337); // PLACEHOLDER
+		intakeTalon = new CANTalon(9); // PLACEHOLDER
 		//intakeTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//intakeTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//intakeTalon.setPosition(0);
@@ -73,3 +73,4 @@ public class RobotMap_old {
 	}
 	
 }
+
