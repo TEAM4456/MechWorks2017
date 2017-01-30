@@ -49,7 +49,7 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("shooterTalon", shooterTalon);
 		
-		//winchTalon = new CANTalon(1337); // PLACEHOLDER
+		winchTalon = new CANTalon(1337); // PLACEHOLDER
 		//winchTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//winchTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//winchTalon.setPosition(0);

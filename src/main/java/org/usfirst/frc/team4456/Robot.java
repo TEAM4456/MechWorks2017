@@ -19,7 +19,6 @@ public class Robot extends IterativeRobot {
 	static Shooter shooter;
 	static Winch winch;
 	
-	
 	public void robotInit() {
 		
 		CameraServer.getInstance().startAutomaticCapture();

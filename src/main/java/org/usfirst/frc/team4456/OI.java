@@ -40,7 +40,7 @@ public class OI {
 		JoystickButton aButton = new JoystickButton(joystick, 1);
 		aButton.toggleWhenPressed(new toggleIntake());
 		JoystickButton bButton = new JoystickButton(joystick, 2);
-		//bButton command configuration here
+		bButton.toggleWhenPressed(new toggleWinch());
 		JoystickButton xButton = new JoystickButton(joystick, 3);
 		//xButton command configuration here
 		JoystickButton yButton = new JoystickButton(joystick, 4);
