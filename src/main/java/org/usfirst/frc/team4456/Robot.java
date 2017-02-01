@@ -1,11 +1,12 @@
 package org.usfirst.frc.team4456;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4456.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
-import edu.wpi.first.wpilibj.CameraServer;
+//import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
 	
@@ -21,9 +22,13 @@ public class Robot extends IterativeRobot {
 	
 	public void robotInit() {
 		
-		CameraServer.getInstance().startAutomaticCapture();
+		//CameraServer.getInstance().startAutomaticCapture();
 		
 		RobotMap.init();
+		
+		// init test SmartDashboard fields here
+		SmartDashboard.putNumber("Intake Speed", -1);
+		SmartDashboard.putNumber("Winch Speed", 0.5);
 		
 		// construct subsystems here
 		deflector = new Deflector();
