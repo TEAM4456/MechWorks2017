@@ -17,24 +17,25 @@ public class RobotMap_new {
 	
 	public static void init() {
 		
-		leftDriveTalon1 = new CANTalon(3);
-		//leftDriveTalon2 = new CANTalon(5);
-		//leftDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
-		//leftDriveTalon2.set(leftDriveTalon1.getDeviceID());
+		leftDriveTalon1 = new CANTalon(6);
+		leftDriveTalon2 = new CANTalon(4);
+		leftDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
+		leftDriveTalon2.set(leftDriveTalon1.getDeviceID());
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
 		//leftDriveTalon2.reverseOutput(true);
 		
 		//SmartDashboard.putData("leftDrive", leftDriveTalon1);
 		
-		rightDriveTalon1 = new CANTalon(4);
-		//rightDriveTalon2 = new CANTalon(6);
-		//rightDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
-		//rightDriveTalon2.set(rightDriveTalon1.getDeviceID());
+		rightDriveTalon1 = new CANTalon(1);
+		rightDriveTalon2 = new CANTalon(2);
+		rightDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
+		rightDriveTalon2.set(rightDriveTalon1.getDeviceID());
 		//// If the slave drive has to be run the opposite direction from the master, uncomment this:
 		//rightDriveTalon2.reverseOutput(true);
 		
 		//SmartDashboard.putData("rightDrive", rightDriveTalon1);
 		
+		// **loaderTalon maybe not needed**
 		//loaderTalon = new CANTalon(1337); // PLACEHOLDER
 		//loaderTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//loaderTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
@@ -42,14 +43,14 @@ public class RobotMap_new {
 		
 		//SmartDashboard.putData("loaderTalon", loaderTalon);
 		
-		//shooterTalon = new CANTalon(1337); // PLACEHOLDER
+		shooterTalon = new CANTalon(5);
 		//shooterTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//shooterTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//shooterTalon.setPosition(0);
 		
 		//SmartDashboard.putData("shooterTalon", shooterTalon);
 		
-		//winchTalon = new CANTalon(1337); // PLACEHOLDER
+		winchTalon = new CANTalon(8);
 		//winchTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//winchTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//winchTalon.setPosition(0);
@@ -63,7 +64,7 @@ public class RobotMap_new {
 		
 		//SmartDashboard.putData("deflectorTalon", deflectorTalon);
 		
-		//intakeTalon = new CANTalon(1337); // PLACEHOLDER
+		intakeTalon = new CANTalon(3);
 		//intakeTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		//intakeTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//intakeTalon.setPosition(0);
