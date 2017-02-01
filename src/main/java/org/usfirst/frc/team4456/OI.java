@@ -42,7 +42,7 @@ public class OI {
 		JoystickButton bButton = new JoystickButton(joystick, 2);
 		bButton.toggleWhenPressed(new toggleWinch());
 		JoystickButton xButton = new JoystickButton(joystick, 3);
-		//xButton command configuration here
+		xButton.toggleWhenPressed(new toggleShooter());
 		JoystickButton yButton = new JoystickButton(joystick, 4);
 		//yButton command configuration here
 		JoystickButton leftBumper = new JoystickButton(joystick, 5);
