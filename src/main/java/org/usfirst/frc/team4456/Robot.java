@@ -28,8 +28,8 @@ public class Robot extends IterativeRobot {
 		
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", -1);
-		SmartDashboard.putNumber("Winch Speed", 0.5);
-		SmartDashboard.putNumber("Shooter Speed", 1);
+		SmartDashboard.putNumber("Winch Speed", .5);
+		SmartDashboard.putNumber("Shooter Speed", .45);
 		
 		// construct subsystems here
 		deflector = new Deflector();
