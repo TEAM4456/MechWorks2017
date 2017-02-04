@@ -57,9 +57,9 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("winchTalon", winchTalon);
 		
-		//deflectorTalon = new CANTalon(1337); // PLACEHOLDER
-		//deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
-		//deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
+		deflectorTalon = new CANTalon(7); // Maybe?
+		deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
+		deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//deflectorTalon.setPosition(0);
 		
 		//SmartDashboard.putData("deflectorTalon", deflectorTalon);

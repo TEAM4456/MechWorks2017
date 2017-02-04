@@ -45,9 +45,9 @@ public class OI {
 		JoystickButton yButton = new JoystickButton(joystick, 4);
 		//yButton command configuration here
 		JoystickButton leftBumper = new JoystickButton(joystick, 5);
-		//leftBumper command configuration here
+		leftBumper.whileHeld(new lowerDeflector());
 		JoystickButton rightBumper = new JoystickButton(joystick, 6);
-		//rightBumper command configuration here
+		rightBumper.whileHeld(new raiseDeflector());
 		JoystickButton backButton = new JoystickButton(joystick, 7);
 		//selectButton command configuration here
 		JoystickButton startButton = new JoystickButton(joystick, 8);
