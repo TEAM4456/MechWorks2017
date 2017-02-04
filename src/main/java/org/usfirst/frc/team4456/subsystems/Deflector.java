@@ -13,21 +13,21 @@ public class Deflector extends Subsystem {
 	
 	public static void raiseDeflector() {
 		
-		RobotMap.deflectorTalon.setPosition(RobotMap.deflectorTalon.getPosition() +
+		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() +
 											SmartDashboard.getNumber("Deflector PID", 0.01));
 		
 	}
 	
 	public static void lowerDeflector() {
 		
-		RobotMap.deflectorTalon.setPosition(RobotMap.deflectorTalon.getPosition() -
+		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() -
 											SmartDashboard.getNumber("Deflector PID", 0.01));
 		
 	}
 	
 	public static void stopDeflector() {
 		
-		RobotMap.deflectorTalon.setPosition(RobotMap.deflectorTalon.getPosition());
+		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get());
 		
 	}
 	
