@@ -6,6 +6,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class raiseDeflector extends Command {
 	
+	/*
+	THIS COMMAND IS PROBABLY TEMPORARY
+	PLANNED FUNCTIONALITY IS SWAPPING BETWEEN 2 SPECIFIC PID POSITIONS FOR HIGH GOAL/LOW GOAL
+	*/
+	
 	protected void initialize() {
 		
 	}
