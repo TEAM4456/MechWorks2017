@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
 		SmartDashboard.putNumber("Shooter Speed", .45);
-		SmartDashboard.putNumber("Agitator Speed", .4);
+		SmartDashboard.putNumber("Agitator Speed", .6);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
 		// construct subsystems here
