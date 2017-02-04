@@ -6,21 +6,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class Controls {
 	
-	// last year all fields were public, maybe change to public if necessary
-	
-	/* UNCOMMENT IF LOCAL VARIABLES DO NOT WORK
-	private JoystickButton aButton; // 1
-	private JoystickButton bButton; // 2
-	private JoystickButton xButton; // 3
-	private JoystickButton yButton; // 4
-	private JoystickButton leftBumper; // 5
-	private JoystickButton rightBumper; // 6
-	private JoystickButton backButton; // 7
-	private JoystickButton startButton; // 8
-	private JoystickButton leftStick; // 9
-	private JoystickButton rightStick; // 10
-	*/
-	
 	public Joystick joystick;
 	
 	public Controls() {
