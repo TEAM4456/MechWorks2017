@@ -1,8 +1,8 @@
 package org.usfirst.frc.team4456.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
 import org.usfirst.frc.team4456.subsystems.Winch;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 public class toggleWinch extends Command {
 	
