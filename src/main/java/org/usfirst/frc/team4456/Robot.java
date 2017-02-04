@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
 		RobotMap.init();
 		
 		// init test SmartDashboard fields here
-		SmartDashboard.putNumber("Intake Speed", -1);
+		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
 		SmartDashboard.putNumber("Shooter Speed", .45);
 		SmartDashboard.putNumber("Deflector PID", 10);

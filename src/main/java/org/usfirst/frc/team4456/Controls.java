@@ -45,9 +45,9 @@ public class Controls {
 		JoystickButton yButton = new JoystickButton(joystick, 4);
 		//yButton command configuration here
 		JoystickButton leftBumper = new JoystickButton(joystick, 5);
-		leftBumper.whileHeld(new lowerDeflector());
+		leftBumper.whileHeld(new lowerDeflector()); // temporary
 		JoystickButton rightBumper = new JoystickButton(joystick, 6);
-		rightBumper.whileHeld(new raiseDeflector());
+		rightBumper.whileHeld(new raiseDeflector()); // temporary
 		JoystickButton backButton = new JoystickButton(joystick, 7);
 		//selectButton command configuration here
 		JoystickButton startButton = new JoystickButton(joystick, 8);
