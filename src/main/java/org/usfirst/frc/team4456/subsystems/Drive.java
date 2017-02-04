@@ -27,7 +27,7 @@ public class Drive extends Subsystem {
 		double xValue = joystick.getRawAxis(0);
 		double yValue = joystick.getRawAxis(1);
 		
-		robotDrive.tankDrive(yValue - xValue, yValue + xValue);
+		robotDrive.tankDrive(yValue - (xValue / 2), yValue + (xValue / 2));
 		
 	}
 	
