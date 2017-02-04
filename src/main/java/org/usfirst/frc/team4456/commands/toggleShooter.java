@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4456.commands;
 
+import org.usfirst.frc.team4456.subsystems.Agitator;
 import org.usfirst.frc.team4456.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -19,6 +20,7 @@ public class toggleShooter extends Command {
 	public synchronized void start() {
 		running = true;
 		Shooter.startShooter();
+		Agitator.startAgitator();
 	}
 	
 	public synchronized void cancel() {
@@ -27,6 +29,7 @@ public class toggleShooter extends Command {
 	
 	protected void end() {
 		Shooter.stopShooter();
+		Agitator.stopAgitator();
 		running = false;
 	}
 	

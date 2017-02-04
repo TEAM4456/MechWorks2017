@@ -6,7 +6,7 @@ import org.usfirst.frc.team4456.subsystems.*;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
-//import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
 	
@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	
 	public void robotInit() {
 		
-		//CameraServer.getInstance().startAutomaticCapture();
+		CameraServer.getInstance().startAutomaticCapture();
 		
 		RobotMap.init();
 		
@@ -30,6 +30,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
 		SmartDashboard.putNumber("Shooter Speed", .45);
+		SmartDashboard.putNumber("Agitator Speed", .4);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
 		// construct subsystems here

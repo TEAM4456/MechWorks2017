@@ -80,7 +80,6 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("agitatorTalon", agitatorTalon);
 		
-		
 	}
 	
 }
