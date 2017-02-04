@@ -14,6 +14,7 @@ public class RobotMap {
 	public static CANTalon winchTalon;
 	public static CANTalon deflectorTalon;
 	public static CANTalon intakeTalon;
+	public static CANTalon agitatorTalon;
 	
 	public static void init() {
 		
@@ -71,6 +72,14 @@ public class RobotMap {
 		//intakeTalon.setPosition(0);
 		
 		//SmartDashboard.putData("intakeTalon", intakeTalon);
+		
+		agitatorTalon = new CANTalon(9);
+		//agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
+		//agitatorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
+		//agitatorTalon.setPosition(0);
+		
+		//SmartDashboard.putData("agitatorTalon", agitatorTalon);
+		
 		
 	}
 	
