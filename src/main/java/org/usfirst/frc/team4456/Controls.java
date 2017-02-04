@@ -4,7 +4,7 @@ import org.usfirst.frc.team4456.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-public class OI {
+public class Controls {
 	
 	// last year all fields were public, maybe change to public if necessary
 	
@@ -23,7 +23,7 @@ public class OI {
 	
 	public Joystick joystick;
 	
-	public OI() {
+	public Controls() {
 		
 		joystick = new Joystick(0);
 		

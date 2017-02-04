@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends IterativeRobot {
 	
-	OI oi;
+	Controls controls;
 	
 	// Subsystem declarations here
 	static Deflector deflector;
@@ -40,14 +40,14 @@ public class Robot extends IterativeRobot {
 		shooter = new Shooter();
 		winch = new Winch();
 		
-		oi = new OI();
+		controls = new Controls();
 		
 		// autonomous choosing stuff here
 		
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		drive.betterArcadeDrive(oi.joystick);
+		drive.betterArcadeDrive(controls.joystick);
 		// add more calls for axis-controlled systems here
 	}
 	
