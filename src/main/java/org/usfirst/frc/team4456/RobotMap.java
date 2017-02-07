@@ -61,7 +61,7 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("winchTalon", winchTalon);
 		
-		deflectorTalon = new CANTalon(7); // Maybe?
+		deflectorTalon = new CANTalon(7);
 		deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.CtreMagEncoder_Relative);
 		//deflectorTalon.setPosition(0);
@@ -83,7 +83,7 @@ public class RobotMap {
 		
 		//SmartDashboard.putData("agitatorTalon", agitatorTalon);
 
-		lidarSerial = new SerialPort(9600,SerialPort.Port.kUSB);
+		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
 		
 	}
 	
