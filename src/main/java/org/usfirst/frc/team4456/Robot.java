@@ -10,11 +10,11 @@ import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
 	
-	Controls controls;
+	public static Controls controls;
 	
 	// Subsystem declarations here
 	static Deflector deflector;
-	static Drive drive;
+	public static Drive drive;
 	static Intake intake;
 	static Loader loader;
 	static Shooter shooter;
@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		drive.betterArcadeDrive(controls.joystick);
+		// drive.betterArcadeDrive(controls.joystick);
 		// add more calls for axis-controlled systems here
 	}
 	
