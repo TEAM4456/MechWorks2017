@@ -29,7 +29,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
 		SmartDashboard.putNumber("Shooter Speed", .45);
-		SmartDashboard.putNumber("Agitator Speed", .18);
+		SmartDashboard.putNumber("Agitator Speed", .24);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
 		// construct subsystems here
@@ -47,6 +47,7 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
+		drive.betterArcadeDrive(controls.joystick);
 		lidar.update();
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 	}

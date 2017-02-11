@@ -11,7 +11,6 @@ public class Lidar extends Subsystem {
 	
 	protected void initDefaultCommand() { /* set default command here */ }
 	
-	
 	public double getDistance()
 	{
 		return average(format(arduinoBuffer));

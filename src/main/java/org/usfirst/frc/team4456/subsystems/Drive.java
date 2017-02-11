@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4456.subsystems;
 
 import org.usfirst.frc.team4456.RobotMap;
-import org.usfirst.frc.team4456.commands.controlDrive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -16,7 +15,7 @@ public class Drive extends Subsystem {
 	
 	public final RobotDrive robotDrive = new RobotDrive(leftDriveTalon1, rightDriveTalon1);
 	
-	protected void initDefaultCommand() { setDefaultCommand(new controlDrive()); }
+	protected void initDefaultCommand() {}
 	
 	public void betterArcadeDrive(Joystick joystick) {
 		
