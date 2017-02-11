@@ -9,7 +9,7 @@ public class Agitator extends Subsystem {
 	
 	protected void initDefaultCommand() { /* set default command here */ }
 	
-	public static void startAgitator() { RobotMap.agitatorTalon.set(SmartDashboard.getNumber("Agitator Speed", 0.01)); }
+	public static void startAgitator() { RobotMap.agitatorTalon.set(SmartDashboard.getNumber("Agitator Voltage", 0.01)); }
 	
 	public static void stopAgitator() { RobotMap.agitatorTalon.set(0); }
 	

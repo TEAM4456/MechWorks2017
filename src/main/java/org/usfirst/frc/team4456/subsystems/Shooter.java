@@ -11,7 +11,7 @@ public class Shooter extends Subsystem {
 	
 	public static void startShooter() {
 		// set shooterTalon to 100% then shift down to 45% once we reach a certain RPM
-		RobotMap.shooterTalon.set(SmartDashboard.getNumber("Shooter Speed", 0.01));
+		RobotMap.shooterTalon.set(SmartDashboard.getNumber("Shooter Voltage", 0.01));
 	}
 	
 	public static void stopShooter() { RobotMap.shooterTalon.set(0); }
