@@ -15,10 +15,9 @@ public class Robot extends IterativeRobot {
 	static Deflector deflector;
 	public static Drive drive;
 	static Intake intake;
-	static Loader loader;
+	static Lidar lidar;
 	static Shooter shooter;
 	static Winch winch;
-	static Lidar lidar;
 	
 	public void robotInit() {
 		
@@ -37,7 +36,6 @@ public class Robot extends IterativeRobot {
 		deflector = new Deflector();
 		drive = new Drive();
 		intake = new Intake();
-		loader = new Loader();
 		shooter = new Shooter();
 		winch = new Winch();
 		lidar = new Lidar();
