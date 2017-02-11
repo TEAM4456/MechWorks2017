@@ -5,14 +5,14 @@ public class Lidar
 	private String arduinoBuffer = "";
 	private int arduinoBufferLength = 50;
 	
-	public Lidar(Robot robot)
+	public Lidar()
 	{
 		//arduinoBuffer = robot.serialUSB.readString();
 	}
 	
 	public double getDistance()
 	{
-		return format(arduinoBuffer);
+		return average(format(arduinoBuffer));
 	}
 	
 	public void update(Robot robot)
@@ -28,9 +28,10 @@ public class Lidar
 		//System.out.println(arduinoBuffer);
 	}
 	
-	private double format(String string)
+	private double[] format(String string)
     {
-    	String[] stringArray = string.split("\n");
+    	String[] stringArray_in = string.split("\n");
+		String[] stringArray = java.util.Arrays.copyOfRange(stringArray_in, 1, stringArray_in.length - 1);
     	double[] doubleArray = new double[stringArray.length];
     	for(int i = 0; i < stringArray.length; i++)
     	{
@@ -43,12 +44,24 @@ public class Lidar
     			doubleArray[i] = 1.0;
     		}
     	}
-    	if(doubleArray.length < 2)
-    	{
-    		return 0;
-    	}
-    	return doubleArray[doubleArray.length-2];
+
+    	return doubleArray;
     }
+
+    private double average(double[] distances) {
+		if (distances.length < 1) {
+			return 0;
+		}
+		else {
+			double sum = 0;
+
+			for (double d : distances)
+				sum += d;
+
+			return sum / distances.length;
+		}
+
+	}
 	
 	private void updateArduinoBuffer(String newString)
     {
