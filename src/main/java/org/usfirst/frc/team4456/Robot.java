@@ -18,6 +18,7 @@ public class Robot extends IterativeRobot {
 	static Loader loader;
 	static Shooter shooter;
 	static Winch winch;
+	static Lidar lidar;
 	
 	public void robotInit() {
 		
@@ -39,6 +40,7 @@ public class Robot extends IterativeRobot {
 		loader = new Loader();
 		shooter = new Shooter();
 		winch = new Winch();
+		lidar = new Lidar();
 		
 		controls = new Controls();
 		
@@ -47,8 +49,8 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
-		// drive.betterArcadeDrive(controls.joystick);
-		// add more calls for axis-controlled systems here
+		lidar.update();
+		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 	}
 	
 	public void disabledInit() {}
