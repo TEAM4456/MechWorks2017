@@ -7,20 +7,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Intake extends Subsystem {
 	
-	protected void initDefaultCommand() {
-		// set default command here
-	}
+	protected void initDefaultCommand() { /* set default command here */ }
 	
-	public static void startIntake() {
-		
-		RobotMap.intakeTalon.set(SmartDashboard.getNumber("Intake Speed", 0.01));
-		
-	}
+	public static void startIntake() { RobotMap.intakeTalon.set(SmartDashboard.getNumber("Intake Speed", 0.01)); }
 	
-	public static void stopIntake() {
-		
-		RobotMap.intakeTalon.set(0);
-		
-	}
+	public static void stopIntake() { RobotMap.intakeTalon.set(0); }
 	
 }

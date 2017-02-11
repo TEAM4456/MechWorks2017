@@ -7,28 +7,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Deflector extends Subsystem {
 	
-	protected void initDefaultCommand() {
-		// set default command here
-	}
+	protected void initDefaultCommand() { /* set default command here */ }
 	
 	public static void raiseDeflector() {
-		
 		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() +
 											SmartDashboard.getNumber("Deflector PID", 0.01));
-		
 	}
 	
 	public static void lowerDeflector() {
-		
 		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() -
 											SmartDashboard.getNumber("Deflector PID", 0.01));
-		
 	}
 	
-	public static void stopDeflector() {
-		
-		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get());
-		
-	}
+	public static void stopDeflector() { RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get()); }
 	
 }

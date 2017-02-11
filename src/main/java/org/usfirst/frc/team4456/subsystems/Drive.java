@@ -16,9 +16,7 @@ public class Drive extends Subsystem {
 	
 	public final RobotDrive robotDrive = new RobotDrive(leftDriveTalon1, rightDriveTalon1);
 	
-	protected void initDefaultCommand() {
-		setDefaultCommand(new controlDrive());
-	}
+	protected void initDefaultCommand() { setDefaultCommand(new controlDrive()); }
 	
 	public void betterArcadeDrive(Joystick joystick) {
 		

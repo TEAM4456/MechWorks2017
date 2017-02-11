@@ -7,20 +7,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Winch extends Subsystem {
 	
-	protected void initDefaultCommand() {
-		// set default command here
-	}
+	protected void initDefaultCommand() { /* set default command here */ }
 	
-	public static void startWinch() {
-		
-		RobotMap.winchTalon.set(SmartDashboard.getNumber("Winch Speed", 0.01));
-		
-	}
+	public static void startWinch() { RobotMap.winchTalon.set(SmartDashboard.getNumber("Winch Speed", 0.01)); }
 	
-	public static void stopWinch() {
-		
-		RobotMap.winchTalon.set(0);
-		
-	}
+	public static void stopWinch() { RobotMap.winchTalon.set(0); }
 	
 }
