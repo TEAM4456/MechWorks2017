@@ -13,7 +13,7 @@ public class Robot extends IterativeRobot {
 	
 	// Subsystem declarations here
 	static Deflector deflector;
-	public static Drive drive;
+	static Drive drive;
 	static Intake intake;
 	static Lidar lidar;
 	static Shooter shooter;
