@@ -48,7 +48,8 @@ public class RobotMap {
 		//SmartDashboard.putData("loaderTalon", loaderTalon);
 		
 		shooterTalon = new CANTalon(5);
-		//shooterTalon.changeControlMode(CANTalon.TalonControlMode.Position);
+		shooterTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
+		shooterTalon.setVoltageCompensationRampRate(24.0); // 50 ms to 12V
 		//shooterTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//shooterTalon.setPosition(0);
 		
@@ -77,7 +78,8 @@ public class RobotMap {
 		//SmartDashboard.putData("intakeTalon", intakeTalon);
 		
 		agitatorTalon = new CANTalon(9);
-		//agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
+		agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
+		agitatorTalon.setVoltageCompensationRampRate(24.0); // 50 ms to 12V
 		//agitatorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder);
 		//agitatorTalon.setPosition(0);
 		
