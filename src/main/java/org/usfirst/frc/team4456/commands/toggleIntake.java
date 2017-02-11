@@ -9,13 +9,9 @@ public class toggleIntake extends Command {
 	
 	boolean running;
 	
-	protected void initialize() {
-		running = false;
-	}
+	protected void initialize() { running = false; }
 	
-	protected boolean isFinished() {
-		return isTimedOut();
-	}
+	protected boolean isFinished() { return isTimedOut(); }
 	
 	public synchronized void start() {
 		running = true;
@@ -23,9 +19,7 @@ public class toggleIntake extends Command {
 		Agitator.startAgitator();
 	}
 	
-	public synchronized void cancel() {
-		end();
-	}
+	public synchronized void cancel() { end(); }
 	
 	protected void end() {
 		Intake.stopIntake();
@@ -33,12 +27,8 @@ public class toggleIntake extends Command {
 		running = false;
 	}
 	
-	protected void interrupted() {
-		end();
-	}
+	protected void interrupted() { end(); }
 	
-	public synchronized boolean isRunning() {
-		return running;
-	}
+	public synchronized boolean isRunning() { return running; }
 	
 }

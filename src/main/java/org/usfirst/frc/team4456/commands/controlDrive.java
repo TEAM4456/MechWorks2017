@@ -6,9 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class controlDrive extends Command {
 	
-	protected void initialize() {
-		
-	}
+	protected void initialize() {}
 	
 	protected boolean isFinished() { return false; /* never stop */ }
 	

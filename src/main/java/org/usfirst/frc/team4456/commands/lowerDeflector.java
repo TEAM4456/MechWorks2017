@@ -11,19 +11,13 @@ public class lowerDeflector extends Command {
 	PLANNED FUNCTIONALITY IS SWAPPING BETWEEN 2 SPECIFIC PID POSITIONS FOR HIGH GOAL/LOW GOAL
 	*/
 	
-	protected void initialize() {
-		
-	}
+	protected void initialize() {}
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	
-	protected void execute() {
-		Deflector.lowerDeflector();
-	}
+	protected void execute() { Deflector.lowerDeflector(); }
 	
-	protected void end() {
-		Deflector.stopDeflector();
-	}
+	protected void end() { Deflector.stopDeflector(); }
 	
 	protected void interrupted() { end(); }
 	
