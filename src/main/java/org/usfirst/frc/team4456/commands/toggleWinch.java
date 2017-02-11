@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4456.commands;
 
-import org.usfirst.frc.team4456.subsystems.Winch;
+import org.usfirst.frc.team4456.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -8,19 +8,22 @@ public class toggleWinch extends Command {
 	
 	boolean running;
 	
-	protected void initialize() { running = false; }
+	protected void initialize() {
+		requires(Robot.winch);
+		running = false;
+	}
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	
 	public synchronized void start() {
 		running = true;
-		Winch.startWinch();
+		Robot.winch.startWinch();
 	}
 	
 	public synchronized void cancel() { end(); }
 	
 	protected void end() {
-		Winch.stopWinch();
+		Robot.winch.stopWinch();
 		running = false;
 	}
 	

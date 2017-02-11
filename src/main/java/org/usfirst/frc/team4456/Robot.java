@@ -12,12 +12,13 @@ public class Robot extends IterativeRobot {
 	public static Controls controls;
 	
 	// Subsystem declarations here
-	static Deflector deflector;
-	static Drive drive;
-	static Intake intake;
-	static Lidar lidar;
-	static Shooter shooter;
-	static Winch winch;
+	public static Agitator agitator;
+	public static Deflector deflector;
+	private static Drive drive;
+	public static Intake intake;
+	private Lidar lidar;
+	public static Shooter shooter;
+	public static Winch winch;
 	
 	public void robotInit() {
 		
@@ -32,7 +33,8 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Agitator Voltage", 2.88);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
-		// construct subsystems here
+		// construct subsystems here -- Subsystems have static methods, maybe remove this block
+		agitator = new Agitator();
 		deflector = new Deflector();
 		drive = new Drive();
 		intake = new Intake();

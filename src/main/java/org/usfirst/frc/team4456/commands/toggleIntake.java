@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4456.commands;
 
-import org.usfirst.frc.team4456.subsystems.Intake;
-import org.usfirst.frc.team4456.subsystems.Agitator;
+import org.usfirst.frc.team4456.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -9,21 +8,25 @@ public class toggleIntake extends Command {
 	
 	boolean running;
 	
-	protected void initialize() { running = false; }
+	protected void initialize() {
+		requires(Robot.intake);
+		//requires(Robot.agitator);
+		running = false;
+	}
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	
 	public synchronized void start() {
 		running = true;
-		Intake.startIntake();
-		Agitator.startAgitator();
+		Robot.intake.startIntake();
+		//Robot.agitator.startAgitator();
 	}
 	
 	public synchronized void cancel() { end(); }
 	
 	protected void end() {
-		Intake.stopIntake();
-		Agitator.stopAgitator();
+		Robot.intake.stopIntake();
+		//Robot.agitator.stopAgitator();
 		running = false;
 	}
 	

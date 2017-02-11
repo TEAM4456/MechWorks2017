@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4456.commands;
 
-import org.usfirst.frc.team4456.subsystems.Deflector;
+import org.usfirst.frc.team4456.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,13 +11,13 @@ public class raiseDeflector extends Command {
 	PLANNED FUNCTIONALITY IS SWAPPING BETWEEN 2 SPECIFIC PID POSITIONS FOR HIGH GOAL/LOW GOAL
 	*/
 	
-	protected void initialize() {}
+	protected void initialize() { requires(Robot.deflector); }
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	
-	protected void execute() { Deflector.raiseDeflector(); }
+	protected void execute() { Robot.deflector.raiseDeflector(); }
 	
-	protected void end() { Deflector.stopDeflector(); }
+	protected void end() { Robot.deflector.stopDeflector(); }
 	
 	protected void interrupted() { end(); }
 	
