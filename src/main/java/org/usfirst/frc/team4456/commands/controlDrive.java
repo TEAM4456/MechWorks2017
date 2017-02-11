@@ -10,19 +10,12 @@ public class controlDrive extends Command {
 		
 	}
 	
-	protected boolean isFinished() {
-		return false; // never stop
-	}
+	protected boolean isFinished() { return false; /* never stop */ }
 	
-	protected void execute() {
-		Robot.drive.betterArcadeDrive(Robot.controls.joystick);
-	}
+	protected void execute() { Robot.drive.betterArcadeDrive(Robot.controls.joystick); }
 	
-	protected void end() {
-		// nah
-	}
+	protected void end() { /* nah */ }
 	
-	protected void interrupted() {
-		end();
-	}
+	protected void interrupted() { end(); }
+	
 }
