@@ -38,9 +38,9 @@ public class Robot extends IterativeRobot {
 		deflector = new Deflector();
 		drive = new Drive();
 		intake = new Intake();
+		lidar = new Lidar();
 		shooter = new Shooter();
 		winch = new Winch();
-		lidar = new Lidar();
 		
 		controls = new Controls();
 		
