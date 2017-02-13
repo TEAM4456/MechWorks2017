@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class autoLeft extends Command {
 	
+	public autoLeft() { /* requires(...) */ }
+	
 	protected void initialize() {}
 	
 	protected boolean isFinished() { return isTimedOut(); }
