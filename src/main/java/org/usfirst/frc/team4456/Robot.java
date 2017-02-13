@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Agitator Voltage", 2.88);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
-		// construct subsystems here -- Subsystems have static methods, maybe remove this block
+		// construct subsystems here
 		agitator = new Agitator();
 		deflector = new Deflector();
 		drive = new Drive();
