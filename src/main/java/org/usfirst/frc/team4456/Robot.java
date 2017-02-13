@@ -50,7 +50,7 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		Scheduler.getInstance().run();
 		drive.betterArcadeDrive(controls.joystick);
-		lidar.update();
+		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 	}
 	
