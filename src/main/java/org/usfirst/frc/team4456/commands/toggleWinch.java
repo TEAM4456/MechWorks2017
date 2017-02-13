@@ -8,10 +8,9 @@ public class toggleWinch extends Command {
 	
 	boolean running;
 	
-	protected void initialize() {
-		requires(Robot.winch);
-		running = false;
-	}
+	public toggleWinch() { requires(Robot.winch); }
+	
+	protected void initialize() { running = false; }
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	

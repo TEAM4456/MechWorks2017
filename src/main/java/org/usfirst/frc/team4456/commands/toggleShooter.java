@@ -8,10 +8,12 @@ public class toggleShooter extends Command {
 	
 	boolean running;
 	
-	protected void initialize() {
+	public toggleShooter() {
 		requires(Robot.shooter);
-		running = false;
+		requires(Robot.agitator);
 	}
+	
+	protected void initialize() { running = false; }
 	
 	protected boolean isFinished() { return isTimedOut(); }
 	
