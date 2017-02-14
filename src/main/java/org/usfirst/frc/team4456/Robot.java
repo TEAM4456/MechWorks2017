@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
 		
 	}
 	public void robotPeriodic() {
-		Scheduler.getInstance().run();
+		//Scheduler.getInstance().run(); // moved to teleopPeriodic()
 		drive.betterArcadeDrive(controls.joystick);
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
@@ -61,7 +61,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {}
 	
 	public void teleopInit() {}
-	public void teleopPeriodic() {}
+	public void teleopPeriodic() { Scheduler.getInstance().run(); }
 	
 	public void testInit() {
 		// NOTE: teleopInit() is called when going into test mode, so anything in testInit() is extra to teleopInit()
