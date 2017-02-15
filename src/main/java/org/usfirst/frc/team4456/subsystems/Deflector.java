@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Deflector extends Subsystem {
 	
-	protected void initDefaultCommand() { setDefaultCommand(new homeDeflector()); }
+	protected void initDefaultCommand() { /*setDefaultCommand(new homeDeflector());*/ }
 	
 	public static void raiseDeflector() {
 		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() +

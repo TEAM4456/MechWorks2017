@@ -32,6 +32,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter Voltage", 5.4);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 10);
+		SmartDashboard.getBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		
 		// construct subsystems here
 		agitator = new Agitator();
