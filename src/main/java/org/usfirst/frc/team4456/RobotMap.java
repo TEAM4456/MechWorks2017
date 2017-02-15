@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4456;
 
 import com.ctre.CANTalon;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SerialPort;
 
 public class RobotMap {
@@ -15,6 +16,7 @@ public class RobotMap {
 	public static CANTalon intakeTalon;
 	public static CANTalon agitatorTalon;
 	public static SerialPort lidarSerial;
+	public static DigitalInput deflectorSwitch;
 	
 	public static void init() {
 		
@@ -46,6 +48,8 @@ public class RobotMap {
 		agitatorTalon.setVoltageCompensationRampRate(24.0); // 50 ms to 12V
 		
 		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
+		
+		deflectorSwitch = new DigitalInput(0);
 		
 	}
 	
