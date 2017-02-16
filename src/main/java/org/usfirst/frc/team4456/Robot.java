@@ -1,8 +1,10 @@
 package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
+import org.usfirst.frc.team4456.commands.homeDeflector;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -14,9 +16,9 @@ public class Robot extends IterativeRobot {
 	// Subsystem declarations here
 	public static Agitator agitator;
 	public static Deflector deflector;
-	private static Drive drive;
+	public static Drive drive;
 	public static Intake intake;
-	private Lidar lidar;
+	public static Lidar lidar;
 	public static Shooter shooter;
 	public static Winch winch;
 	
@@ -25,6 +27,9 @@ public class Robot extends IterativeRobot {
 		CameraServer.getInstance().startAutomaticCapture();
 		
 		RobotMap.init();
+		
+		//Command homeDeflector = new homeDeflector();
+		///homeDeflector.start();
 		
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", 1);
@@ -50,7 +55,7 @@ public class Robot extends IterativeRobot {
 	}
 	public void robotPeriodic() {
 		//Scheduler.getInstance().run(); // moved to teleopPeriodic()
-		//drive.betterArcadeDrive(controls.joystick); // moved to teleopPeriodic()
+		//drive.betterArcadeDrive(controls.joystick);
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 	}
@@ -64,7 +69,7 @@ public class Robot extends IterativeRobot {
 	public void teleopInit() {}
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		drive.betterArcadeDrive(controls.joystick);
+		//drive.betterArcadeDrive(controls.joystick);
 	}
 	
 	public void testInit() {
