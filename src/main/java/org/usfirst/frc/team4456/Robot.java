@@ -22,14 +22,13 @@ public class Robot extends IterativeRobot {
 	public static Shooter shooter;
 	public static Winch winch;
 	
+	final Command homeDeflector = new homeDeflector();
+	
 	public void robotInit() {
 		
 		CameraServer.getInstance().startAutomaticCapture();
 		
 		RobotMap.init();
-		
-		//Command homeDeflector = new homeDeflector();
-		///homeDeflector.start();
 		
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", 1);
@@ -37,7 +36,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter Voltage", 5.4);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 10);
-		SmartDashboard.getBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
+		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		
 		// construct subsystems here
 		agitator = new Agitator();
