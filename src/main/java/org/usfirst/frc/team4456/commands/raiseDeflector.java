@@ -11,13 +11,18 @@ public class raiseDeflector extends Command {
 	PLANNED FUNCTIONALITY IS SWAPPING BETWEEN 2 SPECIFIC PID POSITIONS FOR HIGH GOAL/LOW GOAL
 	*/
 	
+	boolean finished;
+	
 	public raiseDeflector() { requires(Robot.deflector); }
 	
-	protected void initialize() {}
+	protected void initialize() { finished = false; }
 	
-	protected boolean isFinished() { return isTimedOut(); }
+	protected boolean isFinished() { return finished; }
 	
-	protected void execute() { Robot.deflector.raiseDeflector(); }
+	protected void execute() {
+		Robot.deflector.raiseDeflector();
+		finished = true;
+	}
 	
 	protected void end() { Robot.deflector.stopDeflector(); }
 	
