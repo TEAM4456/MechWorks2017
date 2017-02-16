@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Shooter shooter;
 	public static Winch winch;
 	
-	final Command homeDeflector = new homeDeflector();
+	boolean hasEnabledInit = false;
 	
 	public void robotInit() {
 		
@@ -53,21 +53,34 @@ public class Robot extends IterativeRobot {
 		
 	}
 	public void robotPeriodic() {
-		//Scheduler.getInstance().run(); // moved to teleopPeriodic()
-		//drive.betterArcadeDrive(controls.joystick);
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
+		
+		// call custom enabled methods
+		if (!hasEnabledInit && isEnabled()) { enabledInit(); }
+		if (isEnabled()) { enabledPeriodic(); }
+		
 	}
 	
-	public void disabledInit() {}
+	// custom methods called by robotPeriodic()
+	void enabledInit() {
+		Command homeDeflector = new homeDeflector();
+		//homeDeflector.start();
+		System.out.println("enabledInit() has run!");
+		
+		hasEnabledInit = true;
+	}
+	void enabledPeriodic() { Scheduler.getInstance().run(); }
+	
+	public void disabledInit() { hasEnabledInit = false; }
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {}
-	public void autonomousPeriodic() { Scheduler.getInstance().run(); }
+	public void autonomousPeriodic() {}
 	
 	public void teleopInit() {}
 	public void teleopPeriodic() {
-		Scheduler.getInstance().run();
+		//Scheduler.getInstance().run();
 		//drive.betterArcadeDrive(controls.joystick);
 	}
 	
