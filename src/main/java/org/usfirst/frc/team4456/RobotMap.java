@@ -39,13 +39,14 @@ public class RobotMap {
 		deflectorTalon = new CANTalon(7);
 		deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.CtreMagEncoder_Relative);
+		deflectorTalon.setPID(.7, 0.000001, 0);
 		
 		intakeTalon = new CANTalon(3);
 		intakeTalon.setInverted(true);
 		
 		agitatorTalon = new CANTalon(9);
 		agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
-		agitatorTalon.setVoltageCompensationRampRate(24.0); // 50 ms to 12V
+		agitatorTalon.setVoltageCompensationRampRate(0); // 50 ms to 12V
 		agitatorTalon.setSafetyEnabled(false);
 		
 		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);

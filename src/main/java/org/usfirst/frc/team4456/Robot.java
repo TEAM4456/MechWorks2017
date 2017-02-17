@@ -36,7 +36,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter Voltage", 5.4);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 10);
-		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		
 		// construct subsystems here
 		agitator = new Agitator();
@@ -60,12 +59,14 @@ public class Robot extends IterativeRobot {
 		if (!hasEnabledInit && isEnabled()) { enabledInit(); }
 		if (isEnabled()) { enabledPeriodic(); }
 		
+		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
+		
 	}
 	
 	// custom methods called by robotPeriodic()
 	void enabledInit() {
 		Command homeDeflector = new homeDeflector();
-		//homeDeflector.start();
+		homeDeflector.start();
 		System.out.println("enabledInit() has run!");
 		
 		hasEnabledInit = true;

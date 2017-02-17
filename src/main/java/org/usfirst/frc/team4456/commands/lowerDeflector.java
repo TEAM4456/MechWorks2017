@@ -17,7 +17,7 @@ public class lowerDeflector extends Command {
 	
 	protected void initialize() { finished = false; }
 	
-	protected boolean isFinished() { return finished; }
+	protected boolean isFinished() { return !finished; }
 	
 	protected void execute() {
 		Robot.deflector.lowerDeflector();
