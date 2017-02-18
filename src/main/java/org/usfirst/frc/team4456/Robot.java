@@ -55,7 +55,7 @@ public class Robot extends IterativeRobot {
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
-		System.out.println("Deflector Encoder: " + RobotMap.deflectorTalon.getPosition());
+		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
