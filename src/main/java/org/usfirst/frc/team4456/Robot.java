@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4456;
 
+import com.ctre.CANTalon;
 import org.usfirst.frc.team4456.subsystems.*;
 import org.usfirst.frc.team4456.commands.homeDeflector;
 
@@ -36,6 +37,8 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter Voltage", 5.4);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 10);
+
+		SmartDashboard.putNumber("Autonomous forward distance", 100);
 		
 		// construct subsystems here
 		agitator = new Agitator();
@@ -74,10 +77,29 @@ public class Robot extends IterativeRobot {
 	public void disabledInit() { enabledInitialized = false; }
 	public void disabledPeriodic() {}
 	
-	public void autonomousInit() {}
+	public void autonomousInit() {
+		RobotMap.rightDriveTalon1.setControlMode(CANTalon.TalonControlMode.Position);
+		RobotMap.rightDriveTalon1.set(RobotMap.rightDriveTalon1.get());
+		RobotMap.rightDriveTalon1.setPosition(0);
+		RobotMap.rightDriveTalon1.setPID(0.7, 0, 0);
+
+		RobotMap.leftDriveTalon1.setControlMode(CANTalon.TalonControlMode.Position);
+		RobotMap.leftDriveTalon1.set(RobotMap.leftDriveTalon1.get());
+		RobotMap.leftDriveTalon1.setPosition(0);
+		RobotMap.leftDriveTalon1.setPID(0.7, 0, 0);
+
+		// do autonomous move forward:
+		double forward_move_distance = SmartDashboard.getDouble("Autonomous forward distance");
+		RobotMap.rightDriveTalon1.set(forward_move_distance);
+		RobotMap.leftDriveTalon1.set(forward_move_distance);
+
+	}
 	public void autonomousPeriodic() {}
 	
-	public void teleopInit() {}
+	public void teleopInit() {
+		RobotMap.rightDriveTalon1.setControlMode(CANTalon.TalonControlMode.PercentVbus);
+		RobotMap.leftDriveTalon1.setControlMode(CANTalon.TalonControlMode.PercentVbus);
+	}
 	public void teleopPeriodic() {
 		//Scheduler.getInstance().run();
 		//drive.betterArcadeDrive(controls.joystick);
