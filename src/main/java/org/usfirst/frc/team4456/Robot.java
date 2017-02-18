@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Shooter shooter;
 	public static Winch winch;
 	
-	boolean hasEnabledInit = false;
+	boolean enabledInitialized = false;
 	
 	public void robotInit() {
 		
@@ -56,7 +56,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		
 		// call custom enabled methods
-		if (!hasEnabledInit && isEnabled()) { enabledInit(); }
+		if (!enabledInitialized && isEnabled()) { enabledInit(); }
 		if (isEnabled()) { enabledPeriodic(); }
 		
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
@@ -69,11 +69,11 @@ public class Robot extends IterativeRobot {
 		homeDeflector.start();
 		System.out.println("enabledInit() has run!");
 		
-		hasEnabledInit = true;
+		enabledInitialized = true;
 	}
 	void enabledPeriodic() { Scheduler.getInstance().run(); }
 	
-	public void disabledInit() { hasEnabledInit = false; }
+	public void disabledInit() { enabledInitialized = false; }
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {}
