@@ -2,6 +2,9 @@ package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
 import org.usfirst.frc.team4456.commands.homeDeflector;
+import org.usfirst.frc.team4456.commands.autoLeft;
+import org.usfirst.frc.team4456.commands.autoMiddle;
+import org.usfirst.frc.team4456.commands.autoRight;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -36,8 +39,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter RPM", 110);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 0.3);
-		SmartDashboard.putNumber("Deflector PID", 10);
-
 		SmartDashboard.putNumber("Autonomous forward distance", 100);
 		
 		// construct subsystems here
@@ -58,7 +59,7 @@ public class Robot extends IterativeRobot {
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
-		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.get());
+		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
@@ -77,7 +78,10 @@ public class Robot extends IterativeRobot {
 	public void disabledInit() { enabledInitialized = false; }
 	public void disabledPeriodic() {}
 	
-	public void autonomousInit() {}
+	public void autonomousInit() {
+		Command autonomousCommand = new autoMiddle();
+		autonomousCommand.start();
+	}
 	public void autonomousPeriodic() {}
 	
 	public void teleopInit() {}

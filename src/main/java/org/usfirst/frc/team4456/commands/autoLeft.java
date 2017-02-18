@@ -1,20 +1,35 @@
 package org.usfirst.frc.team4456.commands;
 
+import org.usfirst.frc.team4456.Robot;
 import org.usfirst.frc.team4456.RobotMap;
 
+import com.ctre.CANTalon;
+
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class autoLeft extends Command {
 	
-	public autoLeft() { /* requires(...) */ }
+	boolean finished;
 	
-	protected void initialize() {}
+	public autoLeft() { requires(Robot.drive); }
 	
-	protected boolean isFinished() { return isTimedOut(); }
+	protected void initialize() { finished = false; }
 	
-	protected void execute() {}
+	protected boolean isFinished() { return finished; }
 	
-	protected void end() {}
+	protected void execute() {
+		
+		/* code here */
+		
+		finished = true;
+	}
+	
+	protected void end() {
+		// set drive motors back to PercentVBus for teleop driving
+		RobotMap.rightDriveTalon1.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		RobotMap.leftDriveTalon1.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+	}
 	
 	protected void interrupted() { end(); }
 	
