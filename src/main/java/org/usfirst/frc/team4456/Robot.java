@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot {
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
-		SmartDashboard.putNumber("Shooter Voltage", 5.4);
+		SmartDashboard.putNumber("Shooter RPM", 500);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
 		SmartDashboard.putNumber("Deflector PID", 10);
 		
@@ -65,7 +65,7 @@ public class Robot extends IterativeRobot {
 	// custom methods called by robotPeriodic()
 	void enabledInit() {
 		Command homeDeflector = new homeDeflector();
-		homeDeflector.start();
+		//homeDeflector.start();
 		
 		enabledInitialized = true;
 	}
