@@ -54,14 +54,12 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
+		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		System.out.println("Deflector Encoder: " + RobotMap.deflectorTalon.getPosition());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
 		if (isEnabled()) { enabledPeriodic(); }
-		
-		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
-		
 	}
 	
 	// custom methods called by robotPeriodic()
