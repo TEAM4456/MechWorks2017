@@ -54,6 +54,7 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
+		System.out.println("Deflector Encoder: " + RobotMap.deflectorTalon.getPosition());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
@@ -67,7 +68,6 @@ public class Robot extends IterativeRobot {
 	void enabledInit() {
 		Command homeDeflector = new homeDeflector();
 		homeDeflector.start();
-		System.out.println("enabledInit() has run!");
 		
 		enabledInitialized = true;
 	}
