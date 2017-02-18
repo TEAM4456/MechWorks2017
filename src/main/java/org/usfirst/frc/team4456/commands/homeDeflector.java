@@ -26,7 +26,7 @@ public class homeDeflector extends Command {
 		
 	}
 	
-	protected void end() { Robot.deflector.stopDeflector(); }
+	protected void end() { RobotMap.deflectorTalon.set(0); }
 	
 	protected void interrupted() { end(); }
 	
