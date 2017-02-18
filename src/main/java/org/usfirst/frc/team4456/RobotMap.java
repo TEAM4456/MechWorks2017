@@ -46,7 +46,7 @@ public class RobotMap {
 		
 		agitatorTalon = new CANTalon(9);
 		agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
-		agitatorTalon.setVoltageCompensationRampRate(0); // 50 ms to 12V
+		agitatorTalon.setVoltageCompensationRampRate(0);
 		agitatorTalon.setSafetyEnabled(false);
 		
 		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
