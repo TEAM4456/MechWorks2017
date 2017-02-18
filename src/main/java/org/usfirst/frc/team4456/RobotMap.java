@@ -42,7 +42,7 @@ public class RobotMap {
 		deflectorTalon.changeControlMode(CANTalon.TalonControlMode.Position);
 		deflectorTalon.setFeedbackDevice(CANTalon.FeedbackDevice.CtreMagEncoder_Relative);
 		deflectorTalon.reverseSensor(true);
-		deflectorTalon.setPID(.3, 0, 0);
+		deflectorTalon.setPID(1.5, 0, 0);
 		
 		intakeTalon = new CANTalon(5);
 		

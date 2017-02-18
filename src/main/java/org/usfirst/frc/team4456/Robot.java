@@ -33,9 +33,9 @@ public class Robot extends IterativeRobot {
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
-		SmartDashboard.putNumber("Shooter RPM", 500);
+		SmartDashboard.putNumber("Shooter RPM", 110);
 		SmartDashboard.putNumber("Agitator Voltage", 2.7);
-		SmartDashboard.putNumber("Deflector PID", 10);
+		SmartDashboard.putNumber("Deflector PID", 0.3);
 		
 		// construct subsystems here
 		agitator = new Agitator();
@@ -55,7 +55,7 @@ public class Robot extends IterativeRobot {
 		lidar.update(); // add update() to getDistance()?
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
-		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
+		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.get());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
