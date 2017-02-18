@@ -10,11 +10,14 @@ public class Deflector extends Subsystem {
 	protected void initDefaultCommand() { /* set default command here */ }
 	
 	public static void raiseDeflector() {
-		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() +
-											SmartDashboard.getNumber("Deflector PID", 0.01));
+		if (!RobotMap.deflectorSwitch.get()) {
+			RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() +
+					SmartDashboard.getNumber("Deflector PID", 0.01));
+		}
 	}
 	
 	public static void lowerDeflector() {
+		// if (RobotMap.deflectorTalon.get() < [max value])
 		RobotMap.deflectorTalon.set(RobotMap.deflectorTalon.get() -
 											SmartDashboard.getNumber("Deflector PID", 0.01));
 	}
