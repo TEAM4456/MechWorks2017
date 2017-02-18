@@ -45,7 +45,6 @@ public class RobotMap {
 		deflectorTalon.setPID(.3, 0, 0);
 		
 		intakeTalon = new CANTalon(5);
-		intakeTalon.setInverted(true);
 		
 		agitatorTalon = new CANTalon(9);
 		agitatorTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
