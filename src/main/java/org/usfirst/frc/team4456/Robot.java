@@ -27,6 +27,7 @@ public class Robot extends IterativeRobot {
 	
 	boolean enabledInitialized = false;
 	
+	Command homeDeflector;
 	Command autonomousCommand;
 	
 	public void robotInit() {
@@ -54,6 +55,8 @@ public class Robot extends IterativeRobot {
 		
 		controls = new Controls();
 		
+		homeDeflector = new homeDeflector();
+		
 		// autonomous choosing stuff here
 		autonomousCommand = new autoMiddle();
 		
@@ -74,7 +77,6 @@ public class Robot extends IterativeRobot {
 	
 	// custom methods called by robotPeriodic()
 	void enabledInit() {
-		Command homeDeflector = new homeDeflector();
 		//homeDeflector.start();
 		
 		enabledInitialized = true;
@@ -84,6 +86,7 @@ public class Robot extends IterativeRobot {
 	public void disabledInit() {
 		enabledInitialized = false;
 		
+		homeDeflector.cancel();
 		autonomousCommand.cancel();
 	}
 	public void disabledPeriodic() {}
