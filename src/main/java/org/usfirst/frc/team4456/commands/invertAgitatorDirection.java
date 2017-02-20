@@ -9,7 +9,7 @@ public class invertAgitatorDirection extends Command {
 	
 	boolean finished;
 	
-	public invertAgitatorDirection() { requires(Robot.deflector); }
+	public invertAgitatorDirection() { requires(Robot.agitator); }
 	
 	protected void initialize() { finished = false; }
 	
