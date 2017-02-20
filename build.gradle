@@ -28,3 +28,7 @@ jar {
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2.1'
 }
+
+task deplooy {
+    dependsOn build, deploy
+}
