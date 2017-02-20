@@ -10,9 +10,9 @@ public class DriveAngle extends PIDSubsystem { // This system extends PIDSubsyst
 	public final CANTalon rightDriveTalon1 = RobotMap.rightDriveTalon1;
 
 	public DriveAngle() {
-		super("DriveAngle", 0.1, 0.0, 0.0);// The constructor passes a name for the subsystem and the P, I and D constants that are sueed when computing the motor output
-		setAbsoluteTolerance(0.05);
-		getPIDController().setContinuous(false);
+		super("DriveAngle", 0.009, 0, 0.0);// The constructor passes a name for the subsystem and the P, I and D constants that are sueed when computing the motor output
+		setAbsoluteTolerance(0.1);
+		getPIDController().setContinuous(true);
 	}
 
 	public void initDefaultCommand() {
@@ -23,7 +23,7 @@ public class DriveAngle extends PIDSubsystem { // This system extends PIDSubsyst
 	}
 
 	protected void usePIDOutput(double output) {
-		leftDriveTalon1.pidWrite(output); // this is where the computed output value fromthe PIDController is applied to the motor
-		rightDriveTalon1.pidWrite(output);
+		leftDriveTalon1.pidWrite(-output); // this is where the computed output value fromthe PIDController is applied to the motor
+		rightDriveTalon1.pidWrite(-output);
 	}
 }

@@ -2,9 +2,7 @@ package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
 import org.usfirst.frc.team4456.commands.homeDeflector;
-import org.usfirst.frc.team4456.commands.autoLeft;
-import org.usfirst.frc.team4456.commands.autoMiddle;
-import org.usfirst.frc.team4456.commands.autoRight;
+import org.usfirst.frc.team4456.commands.autoRotate;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -44,10 +42,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Deflector PID", 0.3);
 		SmartDashboard.putNumber("Autonomous forward distance", 100);
 		
-		// construct subsystems here
+		// construct subsystems here (except Drive)
 		agitator = new Agitator();
 		deflector = new Deflector();
-		drive = new Drive();
 		intake = new Intake();
 		lidar = new Lidar();
 		shooter = new Shooter();
@@ -58,7 +55,7 @@ public class Robot extends IterativeRobot {
 		homeDeflector = new homeDeflector();
 		
 		// autonomous choosing stuff here
-		autonomousCommand = new autoMiddle();
+		autonomousCommand = new autoRotate(30);
 		
 	}
 	public void robotPeriodic() {
@@ -95,11 +92,15 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		RobotMap.leftDriveTalon1.setPosition(0);
 		RobotMap.rightDriveTalon1.setPosition(0);
+		drive = null;
 		autonomousCommand.start();
 	}
 	public void autonomousPeriodic() {}
 	
-	public void teleopInit() { autonomousCommand.cancel(); }
+	public void teleopInit() {
+		autonomousCommand.cancel();
+		drive = new Drive();
+	}
 	public void teleopPeriodic() {}
 	
 	public void testInit() {}
