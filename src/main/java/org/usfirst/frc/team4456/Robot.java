@@ -2,7 +2,9 @@ package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
 import org.usfirst.frc.team4456.commands.homeDeflector;
-import org.usfirst.frc.team4456.commands.autoRotate;
+import org.usfirst.frc.team4456.commands.autoLeft;
+import org.usfirst.frc.team4456.commands.autoMiddle;
+import org.usfirst.frc.team4456.commands.autoRight;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -55,7 +57,7 @@ public class Robot extends IterativeRobot {
 		homeDeflector = new homeDeflector();
 		
 		// autonomous choosing stuff here
-		autonomousCommand = new autoRotate(30);
+		autonomousCommand = new autoMiddle();
 		
 	}
 	public void robotPeriodic() {
@@ -90,8 +92,8 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {
-		RobotMap.leftDriveTalon1.setPosition(0);
-		RobotMap.rightDriveTalon1.setPosition(0);
+		//RobotMap.leftDriveTalon1.setPosition(0);
+		//RobotMap.rightDriveTalon1.setPosition(0);
 		drive = null;
 		autonomousCommand.start();
 	}
