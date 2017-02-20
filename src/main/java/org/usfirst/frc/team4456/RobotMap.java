@@ -37,9 +37,11 @@ public class RobotMap {
 		rightDriveTalon2.set(rightDriveTalon1.getDeviceID());
 		
 		shooterTalon = new CANTalon(3);
-		shooterTalon.changeControlMode(CANTalon.TalonControlMode.Speed);
-		shooterTalon.setFeedbackDevice(CANTalon.FeedbackDevice.CtreMagEncoder_Relative);
-		shooterTalon.setPID(.7, 0.000001, 0);
+		shooterTalon.changeControlMode(CANTalon.TalonControlMode.Voltage);
+		shooterTalon.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+		//shooterTalon.setPID(.45, 0, 0);
+		shooterTalon.reverseSensor(true);
+		shooterTalon.setVoltageCompensationRampRate(0);
 		shooterTalon.setInverted(true);
 		
 		winchTalon = new CANTalon(8);

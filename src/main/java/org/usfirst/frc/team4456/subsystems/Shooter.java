@@ -9,7 +9,7 @@ public class Shooter extends Subsystem {
 	
 	protected void initDefaultCommand() { /* set default command here */ }
 	
-	public static void startShooter() { RobotMap.shooterTalon.set(SmartDashboard.getNumber("Shooter RPM", 0.01)); }
+	public static void startShooter() { RobotMap.shooterTalon.set(SmartDashboard.getNumber("Shooter Voltage", 0.01)); }
 	
 	public static void stopShooter() { RobotMap.shooterTalon.set(0); }
 	
