@@ -99,16 +99,10 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {}
 	
 	public void teleopInit() { autonomousCommand.cancel(); }
-	public void teleopPeriodic() {
-		//Scheduler.getInstance().run();
-		//drive.betterArcadeDrive(controls.joystick);
-	}
+	public void teleopPeriodic() {}
 	
-	public void testInit() {
-		// NOTE: teleopInit() is called when going into test mode, so anything in testInit() is extra to teleopInit()
-		// at least I think so...
-	}
-	public void testPeriodic() { /* last year had LiveWindow.run() here */ }
+	public void testInit() {}
+	public void testPeriodic() {}
 	
 }
 
