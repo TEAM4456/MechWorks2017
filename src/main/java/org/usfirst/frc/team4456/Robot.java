@@ -12,8 +12,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 
-import com.kauailabs.navx.frc.AHRS;
-
 public class Robot extends IterativeRobot {
 	
 	public static Controls controls;
@@ -71,6 +69,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("leftDriveTalon1", RobotMap.leftDriveTalon1.getPosition());
 		SmartDashboard.putNumber("rightDriveTalon1", RobotMap.rightDriveTalon1.getPosition());
 		SmartDashboard.putNumber("Actual Shooter RPM", RobotMap.shooterTalon.getSpeed());
+		SmartDashboard.putNumber("Navx yaw", RobotMap.navx.getYaw());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }

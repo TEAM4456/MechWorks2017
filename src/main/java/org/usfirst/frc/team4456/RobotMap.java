@@ -3,6 +3,8 @@ package org.usfirst.frc.team4456;
 import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SerialPort;
+import com.kauailabs.navx.frc.AHRS;
+
 
 public class RobotMap {
 	
@@ -16,7 +18,9 @@ public class RobotMap {
 	public static CANTalon intakeTalon;
 	public static CANTalon agitatorTalon;
 	public static SerialPort lidarSerial;
+	//public static SerialPort serialPortMXP;
 	public static DigitalInput deflectorSwitch;
+	public static AHRS navx;
 	
 	public static void init() {
 		
@@ -62,6 +66,18 @@ public class RobotMap {
 		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
 		
 		deflectorSwitch = new DigitalInput(0);
+
+		//NAVX init
+		try
+		{
+			//serialPortMXP = new SerialPort(57600, SerialPort.Port.kMXP);
+			byte updateRateHz = 50;
+			navx = new AHRS(SerialPort.Port.kMXP, AHRS.SerialDataType.kProcessedData, updateRateHz);
+		}
+		catch(Exception ex)
+		{
+			System.out.println("ERROR!: NAVX INIT" + "\n" + ex);
+		}
 		
 	}
 	
