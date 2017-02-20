@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 
+import com.kauailabs.navx.frc.AHRS;
+
 public class Robot extends IterativeRobot {
 	
 	public static Controls controls;
