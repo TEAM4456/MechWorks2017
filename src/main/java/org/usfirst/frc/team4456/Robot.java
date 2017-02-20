@@ -27,6 +27,8 @@ public class Robot extends IterativeRobot {
 	
 	boolean enabledInitialized = false;
 	
+	Command autonomousCommand;
+	
 	public void robotInit() {
 		
 		CameraServer.getInstance().startAutomaticCapture();
@@ -53,6 +55,7 @@ public class Robot extends IterativeRobot {
 		controls = new Controls();
 		
 		// autonomous choosing stuff here
+		autonomousCommand = new autoMiddle();
 		
 	}
 	public void robotPeriodic() {
@@ -60,6 +63,8 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
+		SmartDashboard.putNumber("leftDriveTalon1", RobotMap.leftDriveTalon1.getPosition());
+		SmartDashboard.putNumber("rightDriveTalon1", RobotMap.rightDriveTalon1.getPosition());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }
@@ -75,16 +80,21 @@ public class Robot extends IterativeRobot {
 	}
 	void enabledPeriodic() { Scheduler.getInstance().run(); }
 	
-	public void disabledInit() { enabledInitialized = false; }
+	public void disabledInit() {
+		enabledInitialized = false;
+		
+		autonomousCommand.cancel();
+	}
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {
-		Command autonomousCommand = new autoMiddle();
+		RobotMap.leftDriveTalon1.setPosition(0);
+		RobotMap.rightDriveTalon1.setPosition(0);
 		autonomousCommand.start();
 	}
 	public void autonomousPeriodic() {}
 	
-	public void teleopInit() {}
+	public void teleopInit() { autonomousCommand.cancel(); }
 	public void teleopPeriodic() {
 		//Scheduler.getInstance().run();
 		//drive.betterArcadeDrive(controls.joystick);
