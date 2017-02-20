@@ -29,6 +29,7 @@ public class Robot extends IterativeRobot {
 	
 	boolean enabledInitialized = false;
 	
+	Command homeDeflector;
 	Command autonomousCommand;
 	
 	public void robotInit() {
@@ -56,6 +57,8 @@ public class Robot extends IterativeRobot {
 		
 		controls = new Controls();
 		
+		homeDeflector = new homeDeflector();
+		
 		// autonomous choosing stuff here
 		autonomousCommand = new autoMiddle();
 		
@@ -76,7 +79,6 @@ public class Robot extends IterativeRobot {
 	
 	// custom methods called by robotPeriodic()
 	void enabledInit() {
-		Command homeDeflector = new homeDeflector();
 		//homeDeflector.start();
 		
 		enabledInitialized = true;
@@ -86,6 +88,7 @@ public class Robot extends IterativeRobot {
 	public void disabledInit() {
 		enabledInitialized = false;
 		
+		homeDeflector.cancel();
 		autonomousCommand.cancel();
 	}
 	public void disabledPeriodic() {}
@@ -98,16 +101,10 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {}
 	
 	public void teleopInit() { autonomousCommand.cancel(); }
-	public void teleopPeriodic() {
-		//Scheduler.getInstance().run();
-		//drive.betterArcadeDrive(controls.joystick);
-	}
+	public void teleopPeriodic() {}
 	
-	public void testInit() {
-		// NOTE: teleopInit() is called when going into test mode, so anything in testInit() is extra to teleopInit()
-		// at least I think so...
-	}
-	public void testPeriodic() { /* last year had LiveWindow.run() here */ }
+	public void testInit() {}
+	public void testPeriodic() {}
 	
 }
 
