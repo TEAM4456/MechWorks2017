@@ -39,8 +39,8 @@ public class Robot extends IterativeRobot {
 		// init test SmartDashboard fields here
 		SmartDashboard.putNumber("Intake Speed", 1);
 		SmartDashboard.putNumber("Winch Speed", .5);
-		SmartDashboard.putNumber("Shooter Voltage", 5.4);
-		SmartDashboard.putNumber("Agitator Voltage", 2.7);
+		SmartDashboard.putNumber("Shooter Voltage", 5.5);
+		SmartDashboard.putNumber("Agitator Voltage", 2.5);
 		SmartDashboard.putNumber("Deflector PID", 0.3);
 		SmartDashboard.putNumber("Autonomous forward distance", 100);
 		
