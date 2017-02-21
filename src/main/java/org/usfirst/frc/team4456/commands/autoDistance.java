@@ -7,26 +7,26 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class autoDistance extends Command {
 	
-	DriveDistance leftDistanceDrive = new DriveDistance();
-	DriveDistance rightDistanceDrive = new DriveDistance();
+	DriveDistance distanceDrive = new DriveDistance();
 	
 	double setDistance;
 	
 	public autoDistance(double setDistance) { this.setDistance = setDistance; }
 	
 	protected void initialize() {
-		leftDistanceDrive.DriveTalon = RobotMap.leftDriveTalon1;
-		rightDistanceDrive.DriveTalon = RobotMap.rightDriveTalon1;
+		distanceDrive.DriveTalon1 = RobotMap.leftDriveTalon1;
+		distanceDrive.DriveTalon2 = RobotMap.rightDriveTalon1;
 		
-		leftDistanceDrive.setSetpoint(RobotMap.leftDriveTalon1.getPosition() - setDistance);
-		rightDistanceDrive.setSetpoint(RobotMap.rightDriveTalon1.getPosition() + setDistance);
+		RobotMap.leftDriveTalon1.setPosition(0);
+		RobotMap.rightDriveTalon1.setPosition(0);
 		
-		leftDistanceDrive.enable();
-		rightDistanceDrive.enable();
+		distanceDrive.setSetpointRelative(setDistance);
+		
+		distanceDrive.enable();
 	}
 	
 	protected boolean isFinished() {
-		return leftDistanceDrive.onTarget() && rightDistanceDrive.onTarget();
+		return distanceDrive.onTarget();
 	}
 	
 	protected void execute() {
@@ -34,8 +34,8 @@ public class autoDistance extends Command {
 	}
 	
 	protected void end() {
-		leftDistanceDrive.disable();
-		rightDistanceDrive.disable();
+		distanceDrive.disable();
+		distanceDrive.setSetpointRelative(0);
 	}
 	
 	protected void interrupted() { end(); }

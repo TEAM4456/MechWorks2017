@@ -27,7 +27,7 @@ public class RobotMap {
 		leftDriveTalon1 = new CANTalon(6);
 		leftDriveTalon1.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		leftDriveTalon1.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
-		leftDriveTalon1.reverseSensor(true);
+		//leftDriveTalon1.reverseSensor(true);
 		leftDriveTalon1.setPosition(0);
 		leftDriveTalon2 = new CANTalon(4);
 		leftDriveTalon2.changeControlMode(CANTalon.TalonControlMode.Follower);
