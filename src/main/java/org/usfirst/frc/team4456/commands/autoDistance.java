@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4456.commands;
 
 import org.usfirst.frc.team4456.RobotMap;
+import org.usfirst.frc.team4456.subsystems.DriveAngle;
 import org.usfirst.frc.team4456.subsystems.DriveDistance;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -17,9 +18,6 @@ public class autoDistance extends Command {
 		distanceDrive.DriveTalon1 = RobotMap.leftDriveTalon1;
 		distanceDrive.DriveTalon2 = RobotMap.rightDriveTalon1;
 		
-		RobotMap.leftDriveTalon1.setPosition(0);
-		RobotMap.rightDriveTalon1.setPosition(0);
-		
 		distanceDrive.setSetpointRelative(setDistance);
 		
 		distanceDrive.enable();
@@ -35,7 +33,6 @@ public class autoDistance extends Command {
 	
 	protected void end() {
 		distanceDrive.disable();
-		distanceDrive.setSetpointRelative(0);
 	}
 	
 	protected void interrupted() { end(); }
