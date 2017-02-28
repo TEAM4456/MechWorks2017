@@ -15,7 +15,7 @@ public class DriveDistance extends PIDSubsystem { // This system extends PIDSubs
 	// driveDistanceLeft.DriveTalon = RobotMap.leftDriveTalon1;
 
 	public DriveDistance() {
-		super("DriveDistance", 0.00075, 0.0, 0.0);// The constructor passes a name for the subsystem and the P, I and D constants that are sueed when computing the motor output
+		super("DriveDistance", 0.002, 0.0, 0.0);// The constructor passes a name for the subsystem and the P, I and D constants that are sueed when computing the motor output
 		setAbsoluteTolerance(10);
 		getPIDController().setContinuous(false);
 		setOutputRange(0.0, 0.25);
