@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
@@ -30,6 +31,8 @@ public class Robot extends IterativeRobot {
 	Command homeDeflector;
 	Command autonomousCommand;
 	
+	SendableChooser autonomousChooser;
+	
 	public void robotInit() {
 		
 		CameraServer.getInstance().startAutomaticCapture();
@@ -47,6 +50,7 @@ public class Robot extends IterativeRobot {
 		// construct subsystems here (except Drive)
 		agitator = new Agitator();
 		deflector = new Deflector();
+		drive = new Drive();
 		intake = new Intake();
 		lidar = new Lidar();
 		shooter = new Shooter();
@@ -57,7 +61,14 @@ public class Robot extends IterativeRobot {
 		homeDeflector = new homeDeflector();
 		
 		// autonomous choosing stuff here
-		autonomousCommand = new autoMiddle();
+		
+		/* autonomousCommand = new autoMiddle(); */
+		
+		autonomousChooser = new SendableChooser();
+		autonomousChooser.addDefault("Middle", new autoMiddle());
+		autonomousChooser.addObject("Left", new autoLeft());
+		autonomousChooser.addObject("Right", new autoRight());
+		SmartDashboard.putData("Autonomous Starting Position", autonomousChooser);
 		
 	}
 	public void robotPeriodic() {
@@ -94,16 +105,13 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		//RobotMap.leftDriveTalon1.setPosition(0);
 		//RobotMap.rightDriveTalon1.setPosition(0);
-		drive = null;
+		autonomousCommand = (Command)autonomousChooser.getSelected();
 		autonomousCommand.start();
 	}
 	public void autonomousPeriodic() {}
 	
-	public void teleopInit() {
-		autonomousCommand.cancel();
-		drive = new Drive();
-	}
-	public void teleopPeriodic() {}
+	public void teleopInit() { autonomousCommand.cancel(); }
+	public void teleopPeriodic() { drive.betterArcadeDrive(controls.joystick); }
 	
 	public void testInit() {}
 	public void testPeriodic() {}
