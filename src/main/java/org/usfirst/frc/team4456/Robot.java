@@ -58,12 +58,9 @@ public class Robot extends IterativeRobot {
 		
 		controls = new Controls();
 		
-		homeDeflector = new homeDeflector();
+		//homeDeflector = new homeDeflector();
 		
 		// autonomous choosing stuff here
-		
-		/* autonomousCommand = new autoMiddle(); */
-		
 		autonomousChooser = new SendableChooser();
 		autonomousChooser.addDefault("Middle", new autoMiddle());
 		autonomousChooser.addObject("Left", new autoLeft());
@@ -72,7 +69,7 @@ public class Robot extends IterativeRobot {
 		
 	}
 	public void robotPeriodic() {
-		lidar.update(); // add update() to getDistance()?
+		lidar.update();
 		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
@@ -97,7 +94,7 @@ public class Robot extends IterativeRobot {
 	public void disabledInit() {
 		enabledInitialized = false;
 		
-		homeDeflector.cancel();
+		//homeDeflector.cancel();
 		autonomousCommand.cancel();
 	}
 	public void disabledPeriodic() {}
