@@ -28,7 +28,7 @@ public class Robot extends IterativeRobot {
 	
 	boolean enabledInitialized = false;
 	
-	Command homeDeflector;
+	//Command homeDeflector;
 	Command autonomousCommand;
 	
 	SendableChooser autonomousChooser;
