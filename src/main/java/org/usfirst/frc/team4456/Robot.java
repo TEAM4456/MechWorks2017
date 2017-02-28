@@ -2,9 +2,12 @@ package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
 //import org.usfirst.frc.team4456.commands.homeDeflector;
-import org.usfirst.frc.team4456.commands.autoLeftBlue;
 import org.usfirst.frc.team4456.commands.autoMiddle;
+import org.usfirst.frc.team4456.commands.autoLeftBlue;
 import org.usfirst.frc.team4456.commands.autoRightBlue;
+import org.usfirst.frc.team4456.commands.autoLeftRed;
+import org.usfirst.frc.team4456.commands.autoRightRed;
+
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
