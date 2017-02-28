@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
-import org.usfirst.frc.team4456.commands.homeDeflector;
+//import org.usfirst.frc.team4456.commands.homeDeflector;
 import org.usfirst.frc.team4456.commands.autoLeft;
 import org.usfirst.frc.team4456.commands.autoMiddle;
 import org.usfirst.frc.team4456.commands.autoRight;
