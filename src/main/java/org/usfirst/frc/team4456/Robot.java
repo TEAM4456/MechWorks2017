@@ -2,9 +2,9 @@ package org.usfirst.frc.team4456;
 
 import org.usfirst.frc.team4456.subsystems.*;
 //import org.usfirst.frc.team4456.commands.homeDeflector;
-import org.usfirst.frc.team4456.commands.autoLeft;
+import org.usfirst.frc.team4456.commands.autoLeftBlue;
 import org.usfirst.frc.team4456.commands.autoMiddle;
-import org.usfirst.frc.team4456.commands.autoRight;
+import org.usfirst.frc.team4456.commands.autoRightBlue;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -60,10 +60,13 @@ public class Robot extends IterativeRobot {
 		//homeDeflector = new homeDeflector();
 		
 		// autonomous choosing stuff here
+		
+		autonomousCommand = new autoMiddle(); // default value, prevents null pointer exception
+		
 		autonomousChooser = new SendableChooser();
-		autonomousChooser.addDefault("Middle", new autoMiddle());
-		autonomousChooser.addObject("Left", new autoLeft());
-		autonomousChooser.addObject("Right", new autoRight());
+		autonomousChooser.addDefault("Auto Middle", new autoMiddle());
+		autonomousChooser.addObject("Auto Left", new autoLeftBlue());
+		autonomousChooser.addObject("Auto Right", new autoRightBlue());
 		SmartDashboard.putData("Autonomous Starting Position", autonomousChooser);
 		
 	}
