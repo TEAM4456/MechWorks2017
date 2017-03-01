@@ -84,6 +84,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("rightDriveTalon1", RobotMap.rightDriveTalon1.getPosition());
 		SmartDashboard.putNumber("Actual Shooter RPM", RobotMap.shooterTalon.getSpeed());
 		SmartDashboard.putNumber("Navx yaw", RobotMap.navx.getYaw());
+		SmartDashboard.putNumber("Navx x-displacement", RobotMap.navx.getDisplacementX());
 		
 		// call custom enabled methods
 		if (!enabledInitialized && isEnabled()) { enabledInit(); }

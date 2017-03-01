@@ -25,11 +25,11 @@ public class Controls {
 		JoystickButton aButton = new JoystickButton(joystick, 1);
 		aButton.toggleWhenPressed(new toggleIntake());
 		JoystickButton bButton = new JoystickButton(joystick, 2);
-		bButton.toggleWhenPressed(new toggleWinch());
+		bButton.toggleWhenPressed(new toggleWinchForward());
 		JoystickButton xButton = new JoystickButton(joystick, 3);
 		xButton.toggleWhenPressed(new toggleShooter());
 		JoystickButton yButton = new JoystickButton(joystick, 4);
-		//yButton.whileHeld(new invertAgitatorDirection());
+		yButton.toggleWhenPressed(new toggleWinchReverse());
 		JoystickButton leftBumper = new JoystickButton(joystick, 5);
 		//leftBumper.whileHeld(new lowerDeflector()); // temporary
 		JoystickButton rightBumper = new JoystickButton(joystick, 6);

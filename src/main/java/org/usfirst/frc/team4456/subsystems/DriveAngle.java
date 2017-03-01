@@ -12,7 +12,7 @@ public class DriveAngle extends PIDSubsystem { // This system extends PIDSubsyst
 	public DriveAngle() {
 		super("DriveAngle", 0.009, 0.0, 0.0);// The constructor passes a name for the subsystem and the P, I and D constants that are sueed when computing the motor output
 		setAbsoluteTolerance(0.1);
-		getPIDController().setContinuous(true);
+		getPIDController().setContinuous(false);
 	}
 
 	public void initDefaultCommand() {

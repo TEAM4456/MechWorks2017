@@ -4,11 +4,11 @@ import org.usfirst.frc.team4456.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class toggleWinch extends Command {
+public class toggleWinchForward extends Command {
 	
 	boolean running;
 	
-	public toggleWinch() { requires(Robot.winch); }
+	public toggleWinchForward() { requires(Robot.winch); }
 	
 	protected void initialize() { running = false; }
 	
@@ -16,7 +16,7 @@ public class toggleWinch extends Command {
 	
 	public synchronized void start() {
 		running = true;
-		Robot.winch.startWinch();
+		Robot.winch.startWinchForward();
 	}
 	
 	public synchronized void cancel() { end(); }
