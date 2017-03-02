@@ -42,13 +42,6 @@ public class Robot extends IterativeRobot {
 		
 		RobotMap.init();
 		
-		// init test SmartDashboard fields here
-		SmartDashboard.putNumber("Intake Speed", 1);
-		SmartDashboard.putNumber("Winch Speed", .5);
-		SmartDashboard.putNumber("Shooter Voltage", 5.5);
-		SmartDashboard.putNumber("Agitator Voltage", 2.5);
-		SmartDashboard.putNumber("Deflector PID", 0.3);
-		
 		// construct subsystems here (except Drive)
 		agitator = new Agitator();
 		deflector = new Deflector();
@@ -108,8 +101,6 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {
-		//RobotMap.leftDriveTalon1.setPosition(0);
-		//RobotMap.rightDriveTalon1.setPosition(0);
 		autonomousCommand = (Command)autonomousChooser.getSelected();
 		autonomousCommand.start();
 	}

@@ -1,13 +1,8 @@
 package org.usfirst.frc.team4456.commands;
 
-import org.usfirst.frc.team4456.Robot;
 import org.usfirst.frc.team4456.RobotMap;
 import org.usfirst.frc.team4456.subsystems.DriveAngle;
-import org.usfirst.frc.team4456.subsystems.DriveDistance;
 
-import com.ctre.CANTalon;
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class autoRotate extends Command {
