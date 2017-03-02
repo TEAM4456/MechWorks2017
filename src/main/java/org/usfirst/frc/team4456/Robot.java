@@ -42,7 +42,7 @@ public class Robot extends IterativeRobot {
 		
 		RobotMap.init();
 		
-		// construct subsystems here (except Drive)
+		// construct subsystems here
 		agitator = new Agitator();
 		deflector = new Deflector();
 		drive = new Drive();
