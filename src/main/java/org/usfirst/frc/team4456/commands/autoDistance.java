@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4456.commands;
 
 import org.usfirst.frc.team4456.RobotMap;
-import org.usfirst.frc.team4456.subsystems.DriveAngle;
 import org.usfirst.frc.team4456.subsystems.DriveDistance;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -23,17 +22,11 @@ public class autoDistance extends Command {
 		distanceDrive.enable();
 	}
 	
-	protected boolean isFinished() {
-		return distanceDrive.onTarget();
-	}
+	protected boolean isFinished() { return distanceDrive.onTarget(); }
 	
-	protected void execute() {
-		
-	}
+	protected void execute() {}
 	
-	protected void end() {
-		distanceDrive.disable();
-	}
+	protected void end() { distanceDrive.disable(); }
 	
 	protected void interrupted() { end(); }
 	

@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4456.subsystems;
 
 import org.usfirst.frc.team4456.RobotMap;
-import org.usfirst.frc.team4456.commands.teleopDrive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
