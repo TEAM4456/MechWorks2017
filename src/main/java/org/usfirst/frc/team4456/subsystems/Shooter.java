@@ -8,7 +8,7 @@ public class Shooter extends Subsystem {
 	
 	protected void initDefaultCommand() { /* set default command here */ }
 	
-	public static void startShooter() { RobotMap.shooterTalon.set(5.5); }
+	public static void startShooter() { RobotMap.shooterTalon.set(5.8); }
 	
 	public static void stopShooter() { RobotMap.shooterTalon.set(0); }
 	

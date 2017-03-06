@@ -69,8 +69,10 @@ public class Robot extends IterativeRobot {
 		
 	}
 	public void robotPeriodic() {
-		lidar.update();
-		SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
+		if (RobotMap.lidarSerial != null) {
+			lidar.update();
+			SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
+		}
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
 		SmartDashboard.putNumber("leftDriveTalon1", RobotMap.leftDriveTalon1.getPosition());

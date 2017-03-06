@@ -65,7 +65,12 @@ public class RobotMap {
 		agitatorTalon.setVoltageCompensationRampRate(0);
 		agitatorTalon.setSafetyEnabled(false);
 		
-		lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
+		try {
+			lidarSerial = new SerialPort(9600, SerialPort.Port.kUSB);
+		} catch (Exception ex) {
+			lidarSerial = null;
+			System.out.println("Exception: " + ex);
+		}
 		
 		deflectorSwitch = new DigitalInput(0);
 
