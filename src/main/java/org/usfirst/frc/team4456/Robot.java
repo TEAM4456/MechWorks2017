@@ -8,7 +8,6 @@ import org.usfirst.frc.team4456.commands.autoRightBlue;
 import org.usfirst.frc.team4456.commands.autoLeftRed;
 import org.usfirst.frc.team4456.commands.autoRightRed;
 
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

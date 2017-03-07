@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SerialPort;
 import com.kauailabs.navx.frc.AHRS;
 
-
 public class RobotMap {
 	
 	public static CANTalon leftDriveTalon1;
