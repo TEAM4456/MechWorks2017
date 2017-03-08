@@ -5,13 +5,13 @@ import org.usfirst.frc.team4456.subsystems.DriveDistance;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class autoDistance extends Command {
+public class autoDistance_PID extends Command {
 	
 	DriveDistance distanceDrive = new DriveDistance();
 	
 	double setDistance;
 	
-	public autoDistance(double setDistance) { this.setDistance = setDistance; }
+	public autoDistance_PID(double setDistance) { this.setDistance = setDistance; }
 	
 	protected void initialize() {
 		distanceDrive.DriveTalon1 = RobotMap.leftDriveTalon1;

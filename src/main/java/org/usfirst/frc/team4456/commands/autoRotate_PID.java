@@ -5,13 +5,13 @@ import org.usfirst.frc.team4456.subsystems.DriveAngle;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class autoRotate extends Command {
+public class autoRotate_PID extends Command {
 	
 	DriveAngle angleDrive = new DriveAngle();
 	
 	double setDegree;
 	
-	public autoRotate(double setDegree) { this.setDegree = setDegree; }
+	public autoRotate_PID(double setDegree) { this.setDegree = setDegree; }
 	
 	protected void initialize() {
 		RobotMap.navx.zeroYaw();
