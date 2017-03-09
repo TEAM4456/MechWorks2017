@@ -9,23 +9,32 @@ public class autoDistance_VBus extends Command {
 	
 	boolean finished;
 	double setPoint;
-	double startPoint;
+	double speed;
+	boolean forward;
 	
-	public autoDistance_VBus(double setPoint) {
+	public autoDistance_VBus(double setPoint, double speed, boolean forward) {
 		requires(Robot.drive);
 		finished = false;
 		this.setPoint = setPoint;
-		startPoint = RobotMap.leftDriveTalon1.getPosition();
+		this.speed = speed;
+		this.forward = forward;
 	}
 	
-	protected void initialize() { Robot.drive.robotDrive.tankDrive(0.3, 0.3); }
+	protected void initialize() {}
 	
 	protected boolean isFinished() { return finished; }
 	
 	protected void execute() {
-		if (RobotMap.leftDriveTalon1.getPosition() >= startPoint + setPoint) {
-			Robot.drive.robotDrive.tankDrive(0.0, 0.0);
-			finished = true;
+		if (forward) {
+			Robot.drive.robotDrive.tankDrive(-speed, -speed);
+			if (RobotMap.leftDriveTalon1.getPosition() >= setPoint) {
+				finished = true;
+			}
+		} else {
+			Robot.drive.robotDrive.tankDrive(speed, speed);
+			if (RobotMap.leftDriveTalon1.getPosition() <= setPoint) {
+				finished = true;
+			}
 		}
 	}
 	
