@@ -1,10 +1,8 @@
 package org.usfirst.frc.team4456;
 
+import org.usfirst.frc.team4456.commands.*;
 import org.usfirst.frc.team4456.subsystems.*;
 //import org.usfirst.frc.team4456.commands.homeDeflector;
-import org.usfirst.frc.team4456.commands.autoMiddle;
-import org.usfirst.frc.team4456.commands.autoShootBlue;
-import org.usfirst.frc.team4456.commands.autoShootRed;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -60,6 +58,8 @@ public class Robot extends IterativeRobot {
 		autonomousChooser.addDefault("Auto Middle", new autoMiddle());
 		autonomousChooser.addObject("Auto Shoot Blue", new autoShootBlue());
 		autonomousChooser.addObject("Auto Shoot Red", new autoShootRed());
+		autonomousChooser.addObject("Auto Gear Left", new autoGearLeft());
+		autonomousChooser.addObject("Auto Gear Right (EXPERIMENTAL)", new autoGearRight());
 		SmartDashboard.putData("Starting Position", autonomousChooser);
 		
 	}
