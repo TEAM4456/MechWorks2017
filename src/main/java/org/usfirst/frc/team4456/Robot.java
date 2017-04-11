@@ -42,7 +42,7 @@ public class Robot extends IterativeRobot {
 		deflector = new Deflector();
 		drive = new Drive();
 		intake = new Intake();
-		lidar = new Lidar();
+		/*lidar = new Lidar();*/
 		shooter = new Shooter();
 		winch = new Winch();
 		
@@ -64,10 +64,12 @@ public class Robot extends IterativeRobot {
 		
 	}
 	public void robotPeriodic() {
+		/*
 		if (RobotMap.lidarSerial != null) {
 			lidar.update();
 			SmartDashboard.putNumber("LiDAR Distance", lidar.getDistance());
 		}
+		*/
 		SmartDashboard.putBoolean("Deflector Switch", RobotMap.deflectorSwitch.get());
 		SmartDashboard.putNumber("Deflector Encoder", RobotMap.deflectorTalon.getPosition());
 		SmartDashboard.putNumber("leftDriveTalon1", RobotMap.leftDriveTalon1.getPosition());
