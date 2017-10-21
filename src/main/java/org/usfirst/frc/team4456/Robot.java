@@ -100,8 +100,8 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {}
 	
 	public void autonomousInit() {
-		autonomousCommand = (Command)autonomousChooser.getSelected();
-		autonomousCommand.start();
+		//autonomousCommand = (Command)autonomousChooser.getSelected();
+		//autonomousCommand.start();
 	}
 	public void autonomousPeriodic() {}
 	
