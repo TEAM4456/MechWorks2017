@@ -2,12 +2,17 @@ plugins {
     id "java"
     id "eclipse"
     id "idea"
-    id "jaci.openrio.gradle.GradleRIO" version "2017.1.2"
+    id "jaci.openrio.gradle.GradleRIO" version "2017.2.3"
 }
 
 frc {
     team = "4456"
     robotClass = "org.usfirst.frc.team4456.Robot"
+}
+
+wpi {
+    //wpilibVersion = "2017.1.1"
+    talonSrxVersion = "4.4.1.14"
 }
 
 dependencies {
@@ -28,8 +33,4 @@ jar {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2.1'
-}
-
-task deplooy {
-    dependsOn build, deploy
 }
